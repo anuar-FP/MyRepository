@@ -1,0 +1,95 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="shortcut icon" href="../flex/media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="../portfolio/ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="./form1.html">Formularios 1</a></li>
+                <li><a href="./form2.html">Formularios 2</a></li>
+                <li><a href="./form3.html">Formularios 3</a></li>
+                <li><a href="./form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul>
+            <li><a href="../flex/index.html">FLEX</a></li>
+        </ul>
+        <ul>
+            <li><a href="../grid/index.html">GRID</a></li>
+        </ul>
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="./form2.html">Anterior</a></li>
+        <li><a href="./form4.html">Siguiente</a></li>
+
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        <h1>Formulario 3</h1>
+
+        <form>
+            <fieldset>
+                Titulo: <input type="text" placeholder="Seleccione uno o introduzca el suyo" required><br><br>
+                Nombre: <input type="text" placeholder="Su nombre"required><br><br>
+                Numero de telefono: <input type="tel" placeholder="+34 699 999 999">(opcional)<br><br> 
+                Email address: <input type="email" placeholder="Foo@bar.com" required><br><br>
+                Tu sitio web: <input type="url" placeholder="www.tusitioweb.com">(opcional)<br><br>
+                Nº de objetos pedidos: <input type="number" min="1" max="10" required>(1-10)<br><br> 
+                Medida: <input type="range" step="0,1" required>(incrementa en 10cm)<br><br>
+                Fecha de entrega: <input type="date" min="2010-12-16" required>(minimo 16/12/2010)<br><br>
+                Hora de la entrega: <input type="time" step="1800" required>(incrementa en 30min)<br><br>
+                Color del objeto: <input type="color" value="#FF0000" required>(default red)<br><br>
+        
+                <input type="submit" value="Enviar">
+            </fieldset>
+        
+            <fieldset>
+                <br><br>Buscar: <input type="search"><input type="submit" value="Go"><br><br>
+            </fieldset>
+        
+            <fieldset>
+                Progreso: <progress value="22" max="100"></progress><br><br>
+                Uso del disco: <meter value="10" max="50"></meter>&nbsp;&nbsp;<meter value="30" max="50"></meter>&nbsp;&nbsp;<meter value="50" max="50"></meter>
+            </fieldset>
+        </form>
+        
+    </div>
+</body>
+</html>

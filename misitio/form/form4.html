@@ -1,0 +1,79 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="shortcut icon" href="../flex/media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="../portfolio/ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="./form1.html">Formularios 1</a></li>
+                <li><a href="./form2.html">Formularios 2</a></li>
+                <li><a href="./form3.html">Formularios 3</a></li>
+                <li><a href="./form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul>
+            <li><a href="../flex/index.html">FLEX</a></li>
+        </ul>
+        <ul>
+            <li><a href="../grid/index.html">GRID</a></li>
+        </ul>
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="./form3.html">Anterior</a></li>
+        <li><a href="./form1.html">Siguiente</a></li>
+
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        <h1>Formulario DNI</h1>
+        <p>Crea un formulario que solicite nombre, apellidos y dni del usuario. Comprueba esta última <br>
+        entrada mediante expresiones regulares. DNI válidos: 12345678Z, 12345678z, 12345678 Z, 12345678-Z. <br>
+        DNI inválidos: 1234567z, 12345678</p>
+    
+        <form>
+            Nombre: <input type="text" placeholder="Nombre" required><br><br>
+            Apellidos: <input type="text" placeholder="Apellidos" required><br><br>
+            DNI/NID: <input type="text" placeholder="DNI o NIF" class="form-control" size="10"  maxlength="9" name="nif" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" title="Introduzca el dni" required><br><br> <!--- dni: \d{8}[ -]?[A-Za-Z] -->
+            <input type="submit" value="Enviar">
+        </form>
+    
+    </div>
+</body>
+</html>

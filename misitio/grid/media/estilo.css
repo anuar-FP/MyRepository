@@ -1,0 +1,212 @@
+body { 
+	font-family: segoe-ui_normal,Segoe UI,Segoe,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
+	display: grid;
+	grid-template-areas: 
+    "header header header"
+    "nav section aside"
+    "footer footer footer";
+	grid-template-rows: 80px 1fr 50px;
+	grid-template-columns: 15% 1fr 18%;
+	grid-gap: 5px;
+  height: 100vh;
+  margin: 10px;  
+  
+}
+
+header {
+	background: #000000;
+  grid-area: header;
+  display: flex;
+    justify-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 0.75em;
+    justify-content: space-between
+}
+
+
+nav {
+	background: rgb(7, 150, 3);
+  grid-area: nav; 
+  display: flex;
+}
+
+section {
+	background: #000000;
+  grid-area: section;    
+  display: flex;
+  flex-flow: row;
+}
+
+
+
+h1{
+  font-size: 2.5em;
+  font-family: Arial Black;
+  text-align: center;
+  color: #ffd700;
+}
+
+h2{
+  font-family: 'Arial Black';
+  justify-items: center;
+  text-align: center;
+  color: #000000;
+}
+p{
+  font-family: 'Arial';
+  padding: 2em;
+  text-align: justify;
+  color: #ffd700;
+  font-size: 1em;
+}
+
+.sectionintel{
+    
+	background: #000000;
+  align-content: space-around;
+  display: flex;
+  flex-flow: row;
+  border-radius: 30px;
+
+  
+}
+
+.sectionamd{
+	background: #000000;
+    display: flex;
+    flex-flow: wrap;
+    border-radius: 30px;
+
+}
+
+.article{
+    background-color: #053f5e;
+    border-radius: 30px;
+    width: 50%;
+}
+.article1{
+    background-color: #115173;
+    border-radius: 30px;
+    width: 50%;
+
+}
+
+
+
+aside {
+	background: rgb(7, 150, 3);
+	grid-area: aside; 
+}
+
+footer {
+	background: #ffffff;
+  grid-area: footer;
+  display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 0.75em;
+}
+
+header, nav, section, aside, footer {
+	padding: 5px;
+}
+
+.name {
+  color: #ffd700
+}
+
+.pie {
+  color: #000000
+}
+
+
+nav {
+  font-family: Arial, Helvetica, sans-serif; /* asignar las fuentes */
+  display: grid
+}
+
+ul.margen {
+background: black; /* color del ul */
+  list-style: none; /* para que no se vean los puntos o enumeracion de un "ul" */
+  margin: 0; /* margen del menu con respecto al margen superior e izquierdo */
+  padding-left: 0; /* margen del menu con respecto al margen izquierdo solamente */
+  padding: 0 3em;
+
+}
+
+.margen li {
+  color: #fff;
+background: rgb(0, 0, 0);
+  display: block;
+  float: left; /* ubica el menu de forma horizontal */
+  padding: 1rem; /* ancho de la barra del menu */
+  position: relative; /* es el que ubica los submenus con su menu padre */
+  text-decoration: none;
+transition-duration: 0.5s;
+}
+
+.tabla { /*para las anclas de las tablas */
+color: black;
+display: block;
+font-size: 200%;
+text-decoration: none;
+
+}
+
+.margen li a {
+color: #fff;
+}
+
+/* li a {
+color: #fff;
+} */
+
+.margen li:hover,
+li:focus-within {
+  background: red;
+  cursor: pointer;
+  
+}
+
+li:focus-within a {
+outline: none;
+}
+
+ul li ul {
+  background: black;
+  visibility: hidden;
+opacity: 0;
+min-width: 5rem; /* asigna la longitud de los submenus */
+  position: absolute;
+transition: all 0.5s ease;
+margin-top: 1rem;
+  left: 0;
+display: none;
+
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+visibility: visible;
+opacity: 1;
+display: block;
+}
+
+ul li ul li {
+  clear: both;
+width: 100%;
+}
+
+.hola {
+background: gray
+}
+
+.hola th {
+background: gray
+}
+
+img {
+padding: 10% 10%
+}
