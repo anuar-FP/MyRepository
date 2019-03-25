@@ -1,0 +1,103 @@
+a {
+    text-decoration: none; /* */
+  }
+
+  body {
+      margin: 0%;
+    
+  }
+
+ .cuerpo {
+    margin: 0 5em;
+  }
+  
+  nav {
+      font-family: Arial, Helvetica, sans-serif; /* asignar las fuentes */
+      display: grid
+  }
+  
+  ul.margen {
+    background: black; /* color del ul */
+      list-style: none; /* para que no se vean los puntos o enumeracion de un "ul" */
+      margin: 0; /* margen del menu con respecto al margen superior e izquierdo */
+      padding-left: 0; /* margen del menu con respecto al margen izquierdo solamente */
+      padding: 0 3em;
+
+  }
+  
+  .margen li {
+      color: #fff;
+    background: rgb(0, 0, 0);
+      display: block;
+      float: left; /* ubica el menu de forma horizontal */
+      padding: 1rem; /* ancho de la barra del menu */
+      position: relative; /* es el que ubica los submenus con su menu padre */
+      text-decoration: none;
+    transition-duration: 0.5s;
+  }
+  
+  .tabla { /*para las anclas de las tablas */
+    color: black;
+    display: block;
+    font-size: 200%;
+    text-decoration: none;
+    
+  }
+    
+  .margen li a {
+    color: #fff;
+  }
+
+ /* li a {
+    color: #fff;
+  } */
+  
+  .margen li:hover,
+  li:focus-within {
+      background: red;
+      cursor: pointer;
+      
+  }
+  
+  li:focus-within a {
+    outline: none;
+  }
+  
+  ul li ul {
+      background: black;
+      visibility: hidden;
+    opacity: 0;
+    min-width: 5rem; /* asigna la longitud de los submenus */
+      position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+      left: 0;
+    display: none;
+    
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+  
+  ul li ul li {
+      clear: both;
+    width: 100%;
+  }
+
+  .hola {
+    background: gray
+  }
+
+  .hola th {
+    background: gray
+  }
+
+  img {
+    padding: 10% 10%
+  }
