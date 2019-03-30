@@ -1,0 +1,224 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="misitio\portfolio\ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../form/form1.html">Formularios 1</a></li>
+                <li><a href="../form/form2.html">Formularios 2</a></li>
+                <li><a href="../form/form3.html">Formularios 3</a></li>
+                <li><a href="../form/form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul><li><a href="../flex/index.html">FLEX</a></li></ul>
+
+        <ul><li><a href="../grid/index.html">GRID</a></li></ul>
+
+        <ul>
+            <li><a href="../AnalizandoRSS/index.html">AnalisisRSS</a>
+                <ul class="dropdown" aria-label="submenu">
+                    <li><a target="_blank" href="../AnalizandoRSS/rss.xml">Mi RSS</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>   
+                </ul>
+            </li>
+        </ul>
+
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        
+    <h1><center>RSS y ATOM</center></h1>
+    <ol>
+        <li> <strong>Indica si es válido el feed</strong> </li>
+        <p>El "validator" nos indica que el "feed" no es valido. <br>
+        <img src="./media/rssvalidator.png" height="400" width="800">
+        </p>
+        <li> <strong>Subsana los errores/warnings en su caso</strong> </li>
+        <p>
+            En la línea 17 y 18 vemos el error "Email address is missing real name", con poner un email valido se solucionaria. <br> <br>
+            En la línea 82 vemos el error " Missing atom:link with rel="self"", para solucionar este erro solo tendremos que declara que es <br>
+            un feed rss añadiendo lo siguiente: rss version="2.0". <br>
+            Luego tan solo deberemos poner un enlace a nuestro feed en "channel" atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml".
+        </p>
+        <li> <strong>Indica channel o equivalente</strong> </li>
+        <p>Desde la linea 4 a la 50.</p>
+        <li> <strong>Indica número de items o equivalentes</strong> </li>
+        <p>Dispone de 10 estiquetas item.</p>
+    </ol>
+
+        <h3> <strong>Estructura y elementos de RSS 2.0:</strong> </h3>
+    <ol>
+        <li><strong>Estructura principal de un documento RSS</strong></li>
+        <p> 
+            <pre><code class="xml">
+                &lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+                        &lt;rss version="2.0"&gt;
+                        &lt;channel&gt;
+                        &lt;/title&gt;
+                        &lt;/link&gt;
+                        &lt;/description&gt;
+                            &lt;/item&gt;
+                            ... &lt;!-- Tantos elementos como entradas queramos --&gt;
+                            &lt;item&gt;
+                        &lt;/channel&gt;
+                        &lt;/rss&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica cuántos elementos <channel> puede haber en un documento RSS</strong></li>
+        <p>Solo puede haber 1</p>
+        <li><strong>Indica los elementos requeridos en &lt;channel&gt; (son tres)</strong></li>
+        <p>
+            <pre><code class="xml">
+                &lt;/title&gt;<br>
+                &lt;/link&gt;<br>
+                &lt;/description&gt;
+            </code></pre>
+            
+        </p>
+        <li><strong>Indica los elementos secundarios en &lt;channel&gt; (son 16)</strong></li>
+        <p>language, language, managingEditor, webMaster, pubDate, lastBuildDate, category, generator, docs, <br> 
+            cloud, ttl, image, textInput, skipHours, skipDays</p>
+        <li><strong>Elementos item</strong></li>
+        <p>title, link, description, author, category, comments, enclosure, guid, pubDate, source</p>
+        <li><strong>Indica el elemento que añade un elemento multimedia. Indica sus tres atributos</strong></li>
+        <p></p>
+    </ol>
+
+        <h3> <strong>Estructura y elementos de Atom 1.0:</strong> </h3>
+    <ol>
+        <li><strong>Estructura principal de un documento Atom</strong></li>
+        <p>
+            <pre><code class="xml">
+                &lt;?xml version="1.0" encoding="utf-8"?&gt;
+                &lt;feed xmlns="http://www.w3.org/2005/Atom"&gt;
+                &lt;title&gt;Example Feed&lt;/title&gt;
+                &lt;link href="http://example.org/"/&gt;
+                &lt;updated&gt;2003-12-13T18:30:02Z&lt;/updated&gt;
+                &lt;author&gt;
+                    &lt;name&gt;John Doe&lt;/name&gt;
+                &lt;/author&gt;
+                &lt;id&gt;urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6&lt;/id&gt;
+                &lt;entry&gt;
+                    &lt;title&gt;Atom-Powered Robots Run Amok&lt;/title&gt;
+                    &lt;link href="http://example.org/2003/12/13/atom03"/&gt;
+                    &lt;id&gt;urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a&lt;/id&gt;
+                    &lt;updated&gt;2003-12-13T18:30:02Z&lt;/updated&gt;
+                    &lt;summary&gt;Some text.&lt;/summary&gt;
+                &lt;/entry&gt;
+                &lt;/feed&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica cuántos elementos &lt;feed&gt; puede haber en un documento Atom</strong></li>
+        <p>Solo 1.</p>
+        <li><strong>Indica los elementos requeridos en &lt;feed&gt;</strong></li>
+        <p>
+            <pre><code class="xml">
+                &lt;title&gt;Example Feed&lt;/title&gt;
+                &lt;updated&gt;2003-12-13T18:30:02Z&lt;/updated&gt;
+                &lt;id&gt;urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6&lt;/id&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica los elementos recomendados en &lt;feed&gt;</strong></li>
+        <p>
+            <pre><code class="xml">
+                    &lt;author&gt;<br>
+                    &lt;link&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica los elementos opcionales en &lt;feed&gt;</strong></li>
+        <p>
+            <pre><code class="xml">
+                    &lt;category&gt;<br>
+                    &lt;contributor&gt;<br>
+                    &lt;generator&gt;<br>
+                    &lt;icon&gt;<br>
+                    &lt;logo&gt;<br>
+                    &lt;rights&gt;<br>
+                    &lt;subtitle&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica los elementos requeridos en &lt;entry&gt;</strong></li>
+        <p>
+            <pre><code class="xml">
+                    &lt;id&gt;<br>
+                    &lt;title&gt;<br>
+                    &lt;updated&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica los elementos recomendados en &lt;entry&gt;</strong></li>
+        <p>
+            <pre><code class="xml">
+                    &lt;author&gt;<br>
+                    &lt;content&gt;<br>
+                    &lt;link&gt;<br>
+                    &lt;summary&gt;
+            </code></pre>
+        </p>
+        <li><strong>Indica los elementos opcionales en &lt;entry&gt;</strong></li>
+        <p>
+           <pre><code class="xml">
+                &lt;category&gt;<br>
+                &lt;contributor&gt;<br>
+                &lt;published&gt;<br>
+                &lt;rights&gt;<br>
+                &lt;source&gt;
+            </code></pre> 
+        </p>
+    </ol>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
+<div class="cuerpo">
+
+    </div>

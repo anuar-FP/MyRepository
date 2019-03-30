@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Mi Atom</title> 
+    <link href="https://anuar-fp.github.io/MyRepository/"/>
+    <updated>2019-03-30T14:03:24Z</updated>
+    <author> 
+            <name>Anouar Bettahi Berdai</name>
+    </author> 
+  <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+  <entry>
+    <title>Mi Atom 2</title>
+    <link href="https://github.com/anuar-FP/MyRepository"/>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <updated>30/03/2019</updated>
+    <summary>Summary del segundo title</summary>
+  </entry>
+</feed>
