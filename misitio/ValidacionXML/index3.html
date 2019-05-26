@@ -1,0 +1,864 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="misitio\portfolio\ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../form/form1.html">Formularios 1</a></li>
+                <li><a href="../form/form2.html">Formularios 2</a></li>
+                <li><a href="../form/form3.html">Formularios 3</a></li>
+                <li><a href="../form/form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul><li><a href="../flex/index.html">FLEX</a></li></ul>
+
+        <ul><li><a href="../grid/index.html">GRID</a></li></ul>
+
+        <ul>
+            <li><a href="../AnalizandoRSS/index.html">AnalisisRSS</a>
+                <ul class="dropdown" aria-label="submenu">
+                    <li><a target="_blank" href="../AnalizandoRSS/rss.xml">Mi RSS</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/correccion.xml">Correccion aemet</a></li>   
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#">AnalisisRSS</a>
+                <ul class="dropdown" aria-label="submenu">
+                    <li><a target="_blank" href="../ValidacionXML/index.html">DTD</a></li>
+                    <li><a target="_blank" href="../ValidacionXML/index2.html">DTD EXTERNO</a></li>
+                    <li><a target="_blank" href="../ValidacionXML/index3.html">XSD</a></li>   
+                </ul>
+            </li>
+        </ul>
+
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        
+    <h1><center><strong>XSD. Ejercicios</strong></center></h1>
+    
+    <h2><strong>COMPLEJO</strong></h2>
+
+    <h3><strong>COMPLEJO 1</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dni="111" xsi:noNamespaceSchemaLocation="complejo1.xsd"&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefono&gt;959222324&lt;/telefono&gt;
+                    &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefono" type="xs:integer"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;xs:attribute name="dni" type="xs:integer"/&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>COMPLEJO 2</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dni="111" xsi:noNamespaceSchemaLocation="complejo2.xsd"&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefono&gt;959222324&lt;/telefono&gt;
+                    &lt;/alumno&gt;
+
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefono"&gt;
+                    &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:integer"&gt;
+                    &lt;xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/&gt;
+                    &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;xs:attribute name="dni" type="xs:integer"/&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>COMPLEJO 3</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dni="111" xsi:noNamespaceSchemaLocation="complejo2.xsd"&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefono&gt;959222324&lt;/telefono&gt;
+                    &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefono"&gt;
+                    &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:integer"&gt;
+                    &lt;xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/&gt;
+                    &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;xs:attribute name="dni" type="xs:integer"/&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h2><strong>INDICADORES</strong></h2>
+
+    <h3><strong>INDICADORES 1</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dni="111" xsi:noNamespaceSchemaLocation="indicadores1.xsd"&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefono&gt;959222324&lt;/telefono&gt;
+                    &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:all&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefono" type="xs:integer"/&gt;
+                    &lt;/xs:all&gt;
+                    &lt;xs:attribute name="dni" type="xs:integer"/&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>INDICADORES 2</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dni="111" xsi:noNamespaceSchemaLocation="indicadores2.xsd"&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefonos&gt;
+                    &lt;fijo&gt;958698547&lt;/fijo&gt;
+                    &lt;movil&gt;666999666&lt;/movil&gt;
+                    &lt;/telefonos&gt;
+                    &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:all&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefonos"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="fijo" type="xs:integer"/&gt;
+                    &lt;xs:element name="movil" type="xs:integer"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:all&gt;
+                    &lt;xs:attribute name="dni" type="xs:integer"/&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>INDICADORES 3</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="indicadores3.xsd"&gt;
+                    &lt;alumno&gt;
+                    &lt;nombre&gt;Antonio Pérez&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Fuente&lt;/calle&gt;
+                    &lt;numero&gt;4&lt;/numero&gt;
+                    &lt;ciudad&gt;Jabugo&lt;/ciudad&gt;
+                    &lt;provincia&gt;Huelva&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefonos&gt;
+                    &lt;fijo&gt;958698547&lt;/fijo&gt;
+                    &lt;movil&gt;666999666&lt;/movil&gt;
+                    &lt;/telefonos&gt;
+                    &lt;/alumno&gt;
+                    &lt;alumno&gt;
+                    &lt;nombre&gt;Rafa&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;Calle Palo&lt;/calle&gt;
+                    &lt;numero&gt;3&lt;/numero&gt;
+                    &lt;ciudad&gt;Madrid&lt;/ciudad&gt;
+                    &lt;provincia&gt;Madrid&lt;/provincia&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefonos&gt;
+                    &lt;fijo&gt;958698589&lt;/fijo&gt;
+                    &lt;movil&gt;666999699&lt;/movil&gt;
+                    &lt;/telefonos&gt;
+                    &lt;/alumno&gt;
+                    &lt;/alumnos&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                    &lt;xs:element name="alumnos"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="alumno"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="nombre" type="xs:string"/&gt;
+                    &lt;xs:element name="direccion"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="calle" type="xs:string"/&gt;
+                    &lt;xs:element name="numero" type="xs:integer"/&gt;
+                    &lt;xs:element name="ciudad" type="xs:string"/&gt;
+                    &lt;xs:element name="provincia" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;xs:element name="telefonos"&gt;
+                    &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                    &lt;xs:element name="fijo" type="xs:integer"/&gt;
+                    &lt;xs:element name="movil" type="xs:integer"/&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                    &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h2><strong>PIZZA</strong></h2>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;pizzas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:NoNameSchemaLocation="pizza.xsd"&gt;
+                    &lt;pizza nombre="Barbacoa" precio="8"&gt;
+                    &lt;ingrediente nombre="Salsa Barbacoa"/&gt;
+                    &lt;ingrediente nombre="Mozzarella"/&gt;
+                    &lt;ingrediente nombre="Pollo"/&gt;
+                    &lt;ingrediente nombre="Bacon"/&gt;
+                    &lt;ingrediente nombre="Ternera"/&gt;
+                    &lt;/pizza&gt;
+                    &lt;pizza nombre="Margarita" precio="6"&gt;
+                    &lt;ingrediente nombre="Tomate"/&gt;
+                    &lt;ingrediente nombre="Jamón"/&gt;
+                    &lt;ingrediente nombre="Queso"/&gt;
+                    &lt;/pizza&gt;
+                    &lt;pizza nombre="Tres Quesos" precio="10"&gt;
+                    &lt;ingrediente nombre="Cabrales"/&gt;
+                    &lt;ingrediente nombre="Mozzarella"/&gt;
+                    &lt;ingrediente nombre="Manchego"/&gt;
+                    &lt;ingrediente nombre="Jamón"/&gt;
+                    &lt;ingrediente nombre="Bacon"/&gt;
+                    &lt;/pizza&gt;
+                    &lt;/pizzas&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema%22%3E
+                          &lt;xs:element name="pizzas"&gt;
+                            &lt;xs:complexType&gt;
+                              &lt;xs:sequence&gt;
+                                &lt;xs:element name="pizza" minOccurs="0" maxOccurs="unbounded"  /&gt;
+                              &lt;/xs:sequence&gt;
+                            &lt;/xs:complexType&gt;
+                          &lt;/xs:element&gt;
+                          &lt;xs:element name="pizza"&gt;
+                            &lt;xs:complexType&gt;
+                              &lt;xs:sequence&gt;
+                                &lt;xs:element name="ingrediente" minOccurs="0" maxOccurs="5"  /&gt;
+                              &lt;/xs:sequence&gt;
+                              &lt;xs:attribute name="nombre" type="xs:ID" use="required" /&gt;
+                              &lt;xs:attribute name="precio" type="xs:integer" use="required" /&gt;
+                            &lt;/xs:complexType&gt;
+                          &lt;/xs:element&gt;
+                          &lt;xs:element name="ingrediente"&gt;
+                            &lt;xs:complexType&gt;
+                              &lt;xs:simpleContent&gt;
+                                &lt;xs:extension base="xs:string"&gt;
+                                  &lt;xs:attribute name="nombre" type="xs:string" use="required" /&gt;
+                                &lt;/xs:extension&gt;
+                              &lt;/xs:simpleContent&gt;
+                            &lt;/xs:complexType&gt;
+                          &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        
+        <h2><strong>RESTRICCIONES</strong></h2>
+
+    <h3><strong>RESTRICCIONES 1</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restriccion1.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni" type="xs:string"/&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:minInclusive value="16"/&gt;
+                        &lt;xs:maxInclusive value="22"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="teléfono" type="xs:integer"/&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                        
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>RESTRICCIONES 2</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restriccion2.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;sexo&gt;H&lt;/sexo&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni" type="xs:string"/&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:minInclusive value="16"/&gt;
+                        &lt;xs:maxInclusive value="22"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="teléfono" type="xs:integer"/&gt;
+                        &lt;xs:element name="sexo"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:enumeration value="H"/&gt;
+                        &lt;xs:enumeration value="M"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                        
+                </code></pre>
+            </p>
+        </ol>
+
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restriccion2a.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;sexo&gt;H&lt;/sexo&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:simpleType name="typeSexo"&gt;
+                        &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:enumeration value="H"/&gt;
+                        &lt;xs:enumeration value="M"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni" type="xs:string"/&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:minInclusive value="16"/&gt;
+                        &lt;xs:maxInclusive value="22"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="teléfono" type="xs:integer"/&gt;
+                        &lt;xs:element name="sexo" type="typeSexo"/&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>RESTRICCIONES 3</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restriccion3.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;sexo&gt;H&lt;/sexo&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni" type="xs:string"/&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:minInclusive value="16"/&gt;
+                        &lt;xs:maxInclusive value="22"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="teléfono"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:pattern value="[6-7][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="sexo"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:enumeration value="H"/&gt;
+                        &lt;xs:enumeration value="M"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>RESTRICCIONES 4</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="restriccion4.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;sexo&gt;H&lt;/sexo&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]"/&gt;
+                        &lt;xs:length value="9"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:minInclusive value="16"/&gt;
+                        &lt;xs:maxInclusive value="22"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="teléfono"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:integer"&gt;
+                        &lt;xs:pattern value="[6-7][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="sexo"&gt;
+                        &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:enumeration value="H"/&gt;
+                        &lt;xs:enumeration value="M"/&gt;
+                        &lt;/xs:restriction&gt;
+                        &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                        
+                </code></pre>
+            </p>
+        </ol>
+
+        <h2><strong>SIMPLE</strong></h2>
+
+    <h3><strong>SIMPLE 1</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="simple1.xsd"&gt;
+                        &lt;nombre&gt;Jorge&lt;/nombre&gt;
+                        &lt;dni&gt;28945698C&lt;/dni&gt;
+                        &lt;direccion&gt;Calle Falsa 1,2,3&lt;/direccion&gt;
+                        &lt;edad&gt;20&lt;/edad&gt;
+                        &lt;teléfono&gt;699874596&lt;/teléfono&gt;
+                        &lt;/alumno&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+                        &lt;xs:element name="alumno"&gt;
+                        &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                        &lt;xs:element name="nombre" type="xs:string"/&gt;
+                        &lt;xs:element name="dni" type="xs:string"/&gt;
+                        &lt;xs:element name="direccion" type="xs:string"/&gt;
+                        &lt;xs:element name="edad" type="xs:integer"/&gt;
+                        &lt;xs:element name="teléfono" type="xs:integer"/&gt;
+                        &lt;/xs:sequence&gt;
+                        &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>SIMPLE 2</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;Libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="simple2.xsd"&gt;
+                          &lt;Titulo&gt;Genetic Programming&lt;/Titulo&gt;
+                          &lt;Autor&gt;John Koza&lt;/Autor&gt;
+                          &lt;Fecha&gt;1994&lt;/Fecha&gt;
+                          &lt;ISBN&gt;0-202-111170-5&lt;/ISBN&gt;
+                          &lt;Editorial&gt;The MIT Press&lt;/Editorial&gt;
+                        &lt;/Libro&gt;
+                </code></pre>
+            </p>
+            <li> <strong>XSD</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+                          &lt;xs:element name="libro"&gt;
+                            &lt;xs:complexType&gt;
+                              &lt;xs:sequence&gt;
+                                &lt;xs:element name="titulo" type="xs:string"/&gt;
+                                &lt;xs:element name="autor" type="xs:string"/&gt;
+                                &lt;xs:element name="fecha" type="xs:string"/&gt;
+                                &lt;xs:element name="ISBN" type="xs:string"/&gt;
+                                &lt;xs:element name="editorial" type="xs:string"/&gt;
+                              &lt;/xs:sequence&gt;
+                            &lt;/xs:complexType&gt;
+                          &lt;/xs:element&gt;
+                        &lt;/xs:schema&gt;
+                </code></pre>
+            </p>
+        </ol>
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
+<div class="cuerpo">
+
+    </div>

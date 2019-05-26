@@ -1,0 +1,1359 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="misitio\portfolio\ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../form/form1.html">Formularios 1</a></li>
+                <li><a href="../form/form2.html">Formularios 2</a></li>
+                <li><a href="../form/form3.html">Formularios 3</a></li>
+                <li><a href="../form/form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul><li><a href="../flex/index.html">FLEX</a></li></ul>
+
+        <ul><li><a href="../grid/index.html">GRID</a></li></ul>
+
+        <ul>
+            <li><a href="../AnalizandoRSS/index.html">AnalisisRSS</a>
+                <ul class="dropdown" aria-label="submenu">
+                    <li><a target="_blank" href="../AnalizandoRSS/rss.xml">Mi RSS</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/correccion.xml">Correccion aemet</a></li>   
+                </ul>
+            </li>
+        </ul>
+        <ul>
+                <li><a href="#">AnalisisRSS</a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a target="_blank" href="../ValidacionXML/index.html">DTD</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index2.html">DTD EXTERNO</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index3.html">XSD</a></li>   
+                    </ul>
+                </li>
+            </ul>
+
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        
+    <h1><center><strong>Introducción a XML. Validación</strong></center></h1>
+    <h2><strong>DTD. Ejercicios 1 y 2</strong></h2>
+    <h3><strong>Ejercicios 1 - Elementos sin atributos - Corregir errores en los elementos</strong></h3>
+    <p>Los siguientes documentos no son válidos porque contienen uno o dos errores (los errores no están en la DTD interna). Corrija los errores y <br>
+        compruébalo con Dreamwaver o notepad++ que ya son documentos válidos.</p>
+        <ol>
+            <li><strong>Números (dtd_01.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;&#63;xml version="1.0" encoding="UTF-8"&#63;&gt;
+                    &lt;&#33;DOCTYPE numeros &#91;
+                    &lt;&#33;ELEMENT numeros &#40;&#35;PCDATA&#41;&gt;
+                    &#93;&gt;
+                    &lt;numeros&gt;25,39,87,7388&lt;/numeros&gt;
+
+                    &lt;&#33;--
+                    Ejercicio 1 Sin Validar
+                    &lt;&#33;DOCTYPE numeros &#91;
+                    &lt;&#33;ELEMENT numeros &#40;&#35;PCDATA&#41;&gt;
+                    &#93;&gt;
+                    &lt;numeros&gt;&lt;numero&gt;25&lt;/numero&gt;&lt;/numeros&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li> <strong>Letras (dtd_02.xml)</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE letras [
+                    &lt;!ELEMENT letras (letra)&gt;
+                    &lt;!ELEMENT letra (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;letras&gt;
+                    &lt;letra&gt;m&lt;/letra&gt;
+                    &lt;/letras&gt;
+
+                    &lt;!--
+                    Ejercicio 9 Sin validar
+                    &lt;!DOCTYPE letras [
+                    &lt;!ELEMENT letras (letra)&gt;
+                    &lt;!ELEMENT letra (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;letras&gt;
+                    &lt;letra&gt;m&lt;/letra&gt;
+                    &lt;letra&gt;uve doble&lt;/letra&gt;
+                    &lt;/letras&gt;
+                    --&gt; 
+                </code></pre>
+            </p>
+            <li><strong>Colores (dtd_03.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE colores [
+                    &lt;!ELEMENT colores (color*)&gt;
+                    &lt;!ELEMENT color (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;colores&gt;
+                    &lt;color&gt;azul marino&lt;/color&gt;
+                    &lt;color&gt;negro&lt;/color&gt;
+                    &lt;color&gt;amarillo&lt;/color&gt;
+                    &lt;/colores&gt;
+
+                    &lt;!--
+                    Ejercicio 19 Sin validar
+                    &lt;!DOCTYPE colores [
+                    &lt;!ELEMENT colores (color*)&gt;
+                    &lt;!ELEMENT color (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;colores&gt;
+                    &lt;color&gt;azul marino&lt;/color&gt;
+                    negro
+                    &lt;color&gt;amarillo&lt;/color&gt;
+                    &lt;/colores&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Flores (dtd_04.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE flores [
+                    &lt;!ELEMENT flores (flor+)&gt;
+                    &lt;!ELEMENT flor (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;flores&gt;
+                    &lt;flor&gt;Margarita&lt;/flor&gt;
+                    &lt;/flores&gt;
+
+                    &lt;!--
+                    Ejercicio 30 Sin validar
+                    &lt;!DOCTYPE flores [
+                    &lt;!ELEMENT flores (flor+)&gt;
+                    &lt;!ELEMENT flor (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;flores&gt;
+                    &lt;/flores&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Animales (dtd_05.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE animales [
+                    &lt;!ELEMENT animales (animal*)&gt;
+                    &lt;!ELEMENT animal (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;animales&gt;
+                    &lt;animal&gt;Caniche&lt;/animal&gt;
+                    &lt;animal&gt;Siamés&lt;/animal&gt;
+                    &lt;/animales&gt;
+
+                    &lt;!--
+                    Ejercicio 38 Sin validar
+                    &lt;!DOCTYPE animales [
+                    &lt;!ELEMENT animales (animal*)&gt;
+                    &lt;!ELEMENT animal (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;animales&gt;
+                    &lt;perro&gt;Caniche&lt;/perro&gt;
+                    &lt;gato&gt;Siamés&lt;/gato&gt;
+                    &lt;/animales&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Escritores (dtd_06.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE escritores [
+                    &lt;!ELEMENT escritores (escritor*)&gt;
+                    &lt;!ELEMENT escritor (nombre, nacimiento)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT nacimiento (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;escritores&gt;
+                    &lt;escritor&gt;
+                    &lt;nombre&gt;Mario Vargas LLosa&lt;/nombre&gt;
+                    &lt;nacimiento&gt;28 de marzo de 1936&lt;/nacimiento&gt;
+                    &lt;/escritor&gt;
+                    &lt;escritor&gt;
+                    &lt;nombre&gt;Milan Kundera&lt;/nombre&gt;
+                    &lt;nacimiento&gt;1 de abril de 1929&lt;/nacimiento&gt;
+                    &lt;/escritor&gt;
+                    &lt;/escritores&gt;
+
+                    &lt;!--
+                    Ejercicio 48 Sin validar
+                    &lt;!DOCTYPE escritores [
+                    &lt;!ELEMENT escritores (escritor*)&gt;
+                    &lt;!ELEMENT escritor (nombre, nacimiento)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT nacimiento (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;escritores&gt;
+                    &lt;escritor&gt;
+                    &lt;nombre&gt;Mario Vargas LLosa&lt;/nombre&gt;
+                    &lt;nacimiento&gt;28 de marzo de 1936&lt;/nacimiento&gt;
+                    &lt;/escritor&gt;
+                    &lt;escritor&gt;
+                    &lt;nacimiento&gt;1 de abril de 1929&lt;/nacimiento&gt;
+                    &lt;nombre&gt;Milan Kundera&lt;/nombre&gt;
+                    &lt;/escritor&gt;
+                    &lt;/escritores&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Músicos (dtd_07.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE musicos [
+                    &lt;!ELEMENT musicos (musico*)&gt;
+                    &lt;!ELEMENT musico ((nombre | apodo), fechaNacimiento)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT apodo (#PCDATA)&gt;
+                    &lt;!ELEMENT fechaNacimiento (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;musicos&gt;
+                    &lt;musico&gt;
+                    &lt;nombre&gt;Antonio Vivaldi&lt;/nombre&gt;
+                    &lt;fechaNacimiento&gt;4 de marzo de 1678&lt;/fechaNacimiento&gt;
+                    &lt;/musico&gt;
+                    &lt;musico&gt;
+                    &lt;apodo&gt;El viejo peluca&lt;/apodo&gt;
+                    &lt;fechaNacimiento&gt;21 de marzo de 1685&lt;/fechaNacimiento&gt;
+                    &lt;/musico&gt;
+                    &lt;/musicos&gt;
+
+                    &lt;!--
+                    Ejercicio 66 Sin validar
+                    &lt;!DOCTYPE musicos [
+                    &lt;!ELEMENT musicos (musico*)&gt;
+                    &lt;!ELEMENT musico ((nombre | apodo), fechaNacimiento)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT apodo (#PCDATA)&gt;
+                    &lt;!ELEMENT fechaNacimiento (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;musicos&gt;
+                    &lt;musico&gt;
+                    &lt;nombre&gt;Antonio Vivaldi&lt;/nombre&gt;
+                    &lt;apodo&gt;El cura pelirrojillo&lt;/apodo&gt;
+                    &lt;fechaNacimiento&gt;4 de marzo de 1678&lt;/fechaNacimiento&gt;
+                    &lt;/musico&gt;
+                    &lt;musico&gt;
+                    &lt;nombre&gt;Johann Sebastian Bach&lt;/nombre&gt;
+                    &lt;apodo&gt;El viejo peluca&lt;/apodo&gt;
+                    &lt;fechaNacimiento&gt;21 de marzo de 1685&lt;/fechaNacimiento&gt;
+                    &lt;/musico&gt;
+                    &lt;/musicos&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Teléfonos de emergencia (dtd_08.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE agenda [
+                    &lt;!ELEMENT agenda (contacto*)&gt;
+                    &lt;!ELEMENT contacto (nombre, telefonoFijo*, telefonoMovil+)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT telefonoFijo (#PCDATA)&gt;
+                    &lt;!ELEMENT telefonoMovil (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;agenda&gt;
+                    &lt;contacto&gt;
+                    &lt;nombre&gt;Ayuntamiento&lt;/nombre&gt;
+                    &lt;telefonoMovil&gt;+34(españa)&lt;/telefonoMovil&gt;
+                    &lt;telefonoFijo&gt;010&lt;/telefonoFijo&gt;
+                    &lt;/contacto&gt;
+                    &lt;contacto&gt;
+                    &lt;nombre&gt;Emergencias&lt;/nombre&gt;
+                    &lt;telefonoFijo&gt;112 (Unión Europea)&lt;/telefonoFijo&gt;
+                    &lt;telefonoMovil&gt;Desconocido&lt;/telefonoMovil&gt;
+                    &lt;telefonoFijo&gt;911 (Estados Unidos)&lt;/telefonoFijo&gt;
+                    &lt;/contacto&gt;
+                    &lt;/agenda&gt;
+
+                    &lt;!--
+                    Ejercicio 87 Sin validar
+                    &lt;!DOCTYPE agenda [
+                    &lt;!ELEMENT agenda (contacto*)&gt;
+                    &lt;!ELEMENT contacto (nombre, telefonoFijo*, telefonoMovil+)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT telefonoFijo (#PCDATA)&gt;
+                    &lt;!ELEMENT telefonoMovil (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;agenda&gt;
+                    &lt;contacto&gt;
+                    &lt;nombre&gt;Ayuntamiento&lt;/nombre&gt;
+                    &lt;telefonoFijo&gt;010&lt;/telefonoFijo&gt;
+                    &lt;/contacto&gt;
+                    contacto&gt;
+                    &lt;nombre&gt;Emergencias&lt;/nombre&gt;
+                    &lt;telefonoFijo&gt;112 (Unión Europea)&lt;/telefonoFijo&gt;
+                    &lt;telefonoMovil&gt;Desconocido&lt;/telefonoMovil&gt;
+                    &lt;telefonoFijo&gt;911 (Estados Unidos)&lt;/telefonoFijo&gt;
+                    &lt;/contacto&gt;
+                    &lt;/agenda&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>El sistema solar (dtd_09.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE sistemaSolar [
+                    &lt;!ELEMENT sistemaSolar (cuerpo*)&gt;
+                    &lt;!ELEMENT cuerpo ((planeta|satelite|asteroide)+)&gt;
+                    &lt;!ELEMENT planeta (#PCDATA)&gt;
+                    &lt;!ELEMENT satelite (#PCDATA)&gt;
+                    &lt;!ELEMENT asteroide (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;sistemaSolar&gt;
+                    &lt;cuerpo&gt;
+                    &lt;planeta&gt;Tierra&lt;/planeta&gt;
+                    &lt;/cuerpo&gt;
+                    &lt;cuerpo&gt;
+                    &lt;asteroide&gt;Ceres&lt;/asteroide&gt;
+                    &lt;/cuerpo&gt;
+                    &lt;/sistemaSolar&gt;
+
+                    &lt;!--
+                    Ejercicio 108 Sin validar
+                    &lt;!DOCTYPE sistemaSolar [
+                    &lt;!ELEMENT sistemaSolar (cuerpo*)&gt;
+                    &lt;!ELEMENT cuerpo ((planeta|satelite|asteroide)+)&gt;
+                    &lt;!ELEMENT planeta (#PCDATA)&gt;
+                    &lt;!ELEMENT satelite (#PCDATA)&gt;
+                    &lt;!ELEMENT asteroide (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;sistemaSolar&gt;
+                    &lt;cuerpo&gt;
+                    &lt;planeta&gt;Tierra&lt;/planeta&gt;
+                    &lt;satelite&gt;Luna&lt;/satelite&gt;
+                    &lt;/cuerpo&gt;
+                    &lt;asteroide&gt;Ceres&lt;/asteroide&gt;
+                    &lt;/sistemaSolar&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>Ejercicio 2  - Elementos sin atributos - Corregir errores en la DTD</strong></h3>
+        <p>Los siguientes documentos no son válidos porque contienen errores
+            (los errores están en la DTD interna). Corrija los errores y comprueba
+            en Dreamwaver que ya son documentos válidos. Casi siempre <br> habrá 
+            varias maneras de corregir la DTD, intente elegir la más sencilla.
+            </p>
+        <ol>
+            <li><strong>Marcadores (dtd_11.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE marcadores [
+                    &lt;!ELEMENT marcadores (marcador*)&gt;
+                    &lt;!ELEMENT marcador (nombre, uri)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT uri (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;marcadores&gt;
+                    &lt;marcador&gt;
+                    &lt;nombre&gt;W3C&lt;/nombre&gt;
+                    &lt;uri&gt;http://www.w3.org/&lt;/uri&gt;
+                    &lt;/marcador&gt;
+                    &lt;marcador&gt;
+                    &lt;nombre&gt;Web Hypertext Application Technology Working Group
+                    (WHATWG)&lt;/nombre&gt;
+                    &lt;uri&gt;http://www.whatwg.org/&lt;/uri&gt;
+                    &lt;/marcador&gt;
+                    &lt;/marcadores&gt;
+
+                    &lt;!--
+                    Ejercicio 1 Sin validar
+                    &lt;!DOCTYPE favoritos [
+                    &lt;!ELEMENT favoritos (marcador)&gt;
+                    &lt;!ELEMENT marcador (nombre, uri)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT uri (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;marcadores&gt;
+                    &lt;marcador&gt;
+                    &lt;nombre&gt;W3C&lt;/nombre&gt;
+                    &lt;uri&gt;http://www.w3.org/&lt;/uri&gt;
+                    &lt;/marcador&gt;
+                    &lt;marcador&gt;
+                    nombre&gt;Web Hypertext Application Technology Working Group
+                    (WHATWG)&lt;/nombre&gt;
+                    &lt;uri&gt;http://www.whatwg.org/&lt;/uri&gt;
+                    &lt;/marcador&gt;
+                    &lt;/marcadores&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Efemérides (dtd_12.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE efemerides [
+                    &lt;!ELEMENT efemerides (efemeride*)&gt;
+                    &lt;!ELEMENT efemeride (fecha, hecho)&gt;
+                    &lt;!ELEMENT fecha (#PCDATA)&gt;
+                    &lt;!ELEMENT hecho (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;efemerides&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;20 de julio de 1969&lt;/fecha&gt;
+                    &lt;hecho&gt;Llegada del hombre a la Luna&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;12 de octubre de 1492&lt;/fecha&gt;
+                    &lt;hecho&gt;Llegada de Colón a América&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;6 de abril de 1909&lt;/fecha&gt;
+                    &lt;hecho&gt;llegada de Robert Peary al Polo Norte&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;/efemerides&gt;
+
+                    &lt;!--
+                    Ejercicio 19 Sin validar
+                    &lt;!DOCTYPE efemerides [
+                    &lt;!ELEMENT efemerides (efemeride)&gt;
+                    &lt;!ELEMENT efemeride (fecha, hecho)&gt;
+                    ]&gt;
+                    &lt;efemerides&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;20 de julio de 1969&lt;/fecha&gt;
+                    &lt;hecho&gt;Llegada del hombre a la Luna&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;12 de octubre de 1492&lt;/fecha&gt;
+                    &lt;hecho&gt;Llegada de Colón a América&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;efemeride&gt;
+                    &lt;fecha&gt;6 de abril de 1909&lt;/fecha&gt;
+                    &lt;hecho&gt;llegada de Robert Peary al Polo Norte&lt;/hecho&gt;
+                    &lt;/efemeride&gt;
+                    &lt;/efemerides&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Aeropuertos (dtd_13.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE aeropuertos [
+                    &lt;!ELEMENT aeropuertos (aeropuerto*)&gt;
+                    &lt;!ELEMENT aeropuerto (nombre, cerrado?)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT cerrado EMPTY&gt;
+                    ]&gt;
+                    &lt;aeropuertos&gt;
+                    &lt;aeropuerto&gt;
+                    &lt;nombre&gt;Berlín Schönefeld (SFX)&lt;/nombre&gt;
+                    &lt;/aeropuerto&gt;
+                    &lt;aeropuerto&gt;
+                    &lt;nombre&gt;Berlín Tempelhof (THF)&lt;/nombre&gt;
+                    &lt;cerrado /&gt;
+                    &lt;/aeropuerto&gt;
+                    &lt;/aeropuertos&gt;
+
+                    &lt;!--
+                    Ejercicio 39 Sin validar
+                    &lt;!DOCTYPE aeropuertos [
+                    &lt;!ELEMENT aeropuertos (aeropuerto*)&gt;
+                    &lt;!ELEMENT aeropuerto (nombre, cerrado)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT cerrado (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;aeropuertos&gt;
+                    &lt;aeropuerto&gt;
+                    &lt;nombre&gt;Berlín Schönefeld (SFX)&lt;/nombre&gt;
+                    &lt;/aeropuerto&gt;
+                    &lt;aeropuerto&gt;
+                    &lt;nombre&gt;Berlín Tempelhof (THF)&lt;/nombre&gt;
+                    &lt;cerrado /&gt;
+                    &lt;/aeropuerto&gt;
+                    &lt;/aeropuertos&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Vuelos (dtd_14.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE vuelos [
+                    &lt;!ELEMENT vuelos (vuelo*)&gt;
+                    &lt;!ELEMENT vuelo (origen, destino)&gt;
+                    &lt;!ELEMENT origen (#PCDATA)&gt;
+                    &lt;!ELEMENT destino (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;vuelos&gt;
+                    &lt;vuelo&gt;
+                    &lt;origen&gt;Valencia (VLC)&lt;/origen&gt;
+                    &lt;destino&gt;Londres Heathrow (LHR)&lt;/destino&gt;
+                    &lt;/vuelo&gt;
+                    &lt;vuelo&gt;
+                    &lt;destino&gt;Berlín Schönefeld (SFX)&lt;/destino&gt;
+                    &lt;origen&gt;Paris Charles de Gaulle (CDG)&lt;/origen&gt;
+                    &lt;/vuelo&gt;
+                    &lt;/vuelos&gt;
+
+                    &lt;!--
+                    Ejercicio 56 Sin validar
+                    &lt;!DOCTYPE vuelos [
+                    &lt;!ELEMENT vuelos (vuelo*)&gt;
+                    &lt;!ELEMENT vuelo (origen, destino)&gt;
+                    &lt;!ELEMENT origen (#PCDATA)&gt;
+                    &lt;!ELEMENT destino (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;vuelos&gt;
+                    &lt;vuelo&gt;
+                    &lt;origen&gt;Valencia (VLC)&lt;/origen&gt;
+                    &lt;destino&gt;Londres Heathrow (LHR)&lt;/destino&gt;
+                    &lt;/vuelo&gt;
+                    &lt;vuelo&gt;
+                    &lt;destino&gt;Berlín Schönefeld (SFX)&lt;/destino&gt;
+                    &lt;origen&gt;Paris Charles de Gaulle (CDG)&lt;/origen&gt;
+                    &lt;/vuelo&gt;
+                    &lt;/vuelos&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Reyes españoles (dtd_15.xml)
+            </strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE reyesEspañoles [
+                    &lt;!ELEMENT reyesEspañoles (rey, reina)*&gt;
+                    &lt;!ELEMENT rey (nombre, padre, madre)&gt;
+                    &lt;!ELEMENT reina (nombre, padre, madre)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT padre (#PCDATA)&gt;
+                    &lt;!ELEMENT madre (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;reyesEspañoles&gt;
+                    &lt;rey&gt;
+                    &lt;nombre&gt;Felipe III&lt;/nombre&gt;
+                    &lt;padre&gt;Felipe II&lt;/padre&gt;
+                    &lt;madre&gt;Ana de Austria&lt;/madre&gt;
+                    &lt;/rey&gt;
+                    &lt;reina&gt;
+                    &lt;nombre&gt;Juana la Loca&lt;/nombre&gt;
+                    &lt;padre&gt;Fernando el Católico&lt;/padre&gt;
+                    &lt;madre&gt;Isabel la Católica&lt;/madre&gt;
+                    &lt;/reina&gt;
+                    &lt;rey&gt;
+                    &lt;nombre&gt;Carlos I&lt;/nombre&gt;
+                    &lt;padre&gt;Felipe el Hermoso&lt;/padre&gt;
+                    &lt;madre&gt;Juan la Loca&lt;/madre&gt;
+                    &lt;/rey&gt;
+                    &lt;/reyesEspañoles&gt;
+
+                    &lt;!--
+                    Ejercicio 74 Sin validar
+                    &lt;!DOCTYPE reyesEspañoles [
+                    &lt;!ELEMENT reyesEspañoles (rey*, reina*)&gt;
+                    &lt;!ELEMENT rey (nombre, padre, madre)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT padre (#PCDATA)&gt;
+                    &lt;!ELEMENT madre (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;reyesEspañoles&gt;
+                    &lt;rey&gt;
+                    &lt;nombre&gt;Felipe III&lt;/nombre&gt;
+                    &lt;padre&gt;Felipe II&lt;/padre&gt;
+                    &lt;madre&gt;Ana de Austria&lt;/madre&gt;
+                    &lt;/rey&gt;
+                    &lt;reina&gt;
+                    &lt;nombre&gt;Juana la Loca&lt;/nombre&gt;
+                    &lt;padre&gt;Fernando el Católico&lt;/padre&gt;
+                    &lt;madre&gt;Isabel la Católica&lt;/madre&gt;
+                    &lt;/reina&gt;
+                    &lt;rey&gt;
+                    &lt;nombre&gt;Carlos I&lt;/nombre&gt;
+                    &lt;padre&gt;Felipe el Hermoso&lt;/padre&gt;
+                    &lt;madre&gt;Juan la Loca&lt;/madre&gt;
+                    &lt;/rey&gt;
+                    &lt;/reyesEspañoles&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Países (dtd_16.xml)
+            </strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE paises [
+                    &lt;!ELEMENT paises (pais*)&gt;
+                    &lt;!ELEMENT pais (nombre,(unionEuropea,otan)?)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT unionEuropea EMPTY&gt;
+                    &lt;!ELEMENT otan EMPTY&gt;
+                    ]&gt;
+                    &lt;paises&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;España&lt;/nombre&gt;
+                    &lt;unionEuropea /&gt;
+                    &lt;otan /&gt;
+                    &lt;/pais&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;Noruega&lt;/nombre&gt;
+                    &lt;otan /&gt;
+                    &lt;/pais&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;Austria&lt;/nombre&gt;
+                    &lt;unionEuropea /&gt;
+                    &lt;/pais&gt;
+                    &lt;/paises&gt;
+
+                    &lt;!--
+                    Ejercicio 100 Sin validar
+                    &lt;!DOCTYPE paises [
+                    &lt;!ELEMENT pais (nombre, unionEuropea, otan)&gt;
+                    &lt;!ELEMENT nombre EMPTY&gt;
+                    &lt;!ELEMENT unionEuropea EMPTY&gt;
+                    &lt;!ELEMENT otan EMPTY&gt;
+                    ]&gt;
+                    &lt;paises&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;España&lt;/nombre&gt;
+                    &lt;unionEuropea /&gt;
+                    &lt;otan /&gt;
+                    &lt;/pais&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;Noruega&lt;/nombre&gt;
+                    &lt;otan /&gt;
+                    &lt;/pais&gt;
+                    &lt;pais&gt;
+                    &lt;nombre&gt;Austria&lt;/nombre&gt;
+                    &lt;unionEuropea /&gt;
+                    &lt;/pais&gt;
+                    &lt;/paises&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Códigos de colores (dtd_17.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE colores [
+                    &lt;!ELEMENT colores (color*)&gt;
+                    &lt;!ELEMENT color (nombreSvg,codigo)&gt;
+                    &lt;!ELEMENT codigo (rgb|cmyk)&gt;
+                    &lt;!ELEMENT nombreSvg (#PCDATA)&gt;
+                    &lt;!ELEMENT rgb (#PCDATA)&gt;
+                    &lt;!ELEMENT cmyk (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;colores&gt;
+                    &lt;color&gt;
+                    &lt;nombreSvg&gt;Purple&lt;/nombreSvg&gt;
+                    &lt;codigo&gt;
+                    &lt;rgb&gt;#800080&lt;/rgb&gt;
+                    &lt;/codigo&gt;
+                    &lt;/color&gt;
+                    &lt;color&gt;
+                    &lt;nombreSvg&gt;Purple&lt;/nombreSvg&gt;
+                    &lt;codigo&gt;
+                    &lt;cmyk&gt;#00FF007F&lt;/cmyk&gt;
+                    &lt;/codigo&gt;
+                    &lt;/color&gt;
+                    &lt;/colores&gt;
+
+                    &lt;!--
+                    Ejercicio 123
+                    &lt;!DOCTYPE colores [
+                    &lt;!ELEMENT colores (color*)&gt;
+                    &lt;!ELEMENT nombreSvg (#PCDATA)&gt;
+                    &lt;!ELEMENT rgb (#PCDATA)&gt;
+                    &lt;!ELEMENT cmyk (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;colores&gt;
+                    &lt;color&gt;
+                    &lt;nombreSvg&gt;Purple&lt;/nombreSvg&gt;
+                    &lt;codigo&gt;
+                    &lt;rgb&gt;#800080&lt;/rgb&gt;
+                    &lt;/codigo&gt;
+                    &lt;/color&gt;
+                    &lt;color&gt;
+                    &lt;nombreSvg&gt;Purple&lt;/nombreSvg&gt;
+                    &lt;codigo&gt;
+                    &lt;cmyk&gt;#00FF007F&lt;/cmyk&gt;
+                    &lt;/codigo&gt;
+                    &lt;/color&gt;
+                    &lt;/colores&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Contabilidad (dtd_18.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE contabilidad [
+                    &lt;!ELEMENT contabilidad (apunte)*&gt;
+                    &lt;!ELEMENT apunte (fecha,cantidad,(ingreso | gasto),concepto)&gt;
+                    &lt;!ELEMENT fecha (#PCDATA)&gt;
+                    &lt;!ELEMENT cantidad (#PCDATA)&gt;
+                    &lt;!ELEMENT concepto (#PCDATA)&gt;
+                    &lt;!ELEMENT gasto EMPTY&gt;
+                    &lt;!ELEMENT ingreso EMPTY&gt;
+                    ]&gt;
+                    &lt;contabilidad&gt;
+                    &lt;apunte&gt;
+                    &lt;ingreso /&gt;
+                    &lt;fecha&gt;24 de febrero de 2011&lt;/fecha&gt;
+                    &lt;cantidad&gt;1800,00 €&lt;/cantidad&gt;
+                    &lt;concepto&gt;Salario&lt;/concepto&gt;
+                    &lt;/apunte&gt;
+                    &lt;apunte&gt;
+                    &lt;gasto /&gt;
+                    &lt;fecha&gt;28 de febrero de 2011&lt;/fecha&gt;
+                    &lt;cantidad&gt;74,25 €&lt;/cantidad&gt;
+                    &lt;concepto&gt;Recibo luz&lt;/concepto&gt;
+                    &lt;/apunte&gt;
+                    &lt;/contabilidad&gt;
+
+                    &lt;!--
+                    Ejercicio 145
+                    &lt;!DOCTYPE contabilidad [
+                    &lt;!ELEMENT contabilidad ((ingreso | gasto)*)&gt;
+                    &lt;!ELEMENT fecha (#PCDATA)&gt;
+                    &lt;!ELEMENT cantidad (#PCDATA)&gt;
+                    &lt;!ELEMENT concepto (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;contabilidad&gt;
+                    &lt;apunte&gt;
+                    &lt;ingreso /&gt;
+                    &lt;fecha&gt;24 de febrero de 2011&lt;/fecha&gt;
+                    &lt;cantidad&gt;1800,00 €&lt;/cantidad&gt;
+                    &lt;concepto&gt;Salario&lt;/concepto&gt;
+                    &lt;/apunte&gt;
+                    &lt;apunte&gt;
+                    &lt;gasto /&gt;
+                    &lt;fecha&gt;28 de febrero de 2011&lt;/fecha&gt;
+                    &lt;cantidad&gt;74,25 €&lt;/cantidad&gt;
+                    &lt;concepto&gt;Recibo luz&lt;/concepto&gt;
+                    &lt;/apunte&gt;
+                    &lt;/contabilidad&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Mensajes (dtd_19.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE mensajes [
+                    &lt;!ELEMENT mensajes (mensaje)&gt;
+                    &lt;!ELEMENT mensaje (de,para,hora,texto)&gt;
+                    &lt;!ELEMENT texto (strong?)&gt;
+                    &lt;!ELEMENT de (#PCDATA)&gt;
+                    &lt;!ELEMENT para (#PCDATA)&gt;
+                    &lt;!ELEMENT hora (#PCDATA)&gt;
+                    &lt;!ELEMENT texto (#PCDATA)&gt;
+                    &lt;!ELEMENT strong (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;mensajes&gt;
+                    &lt;mensaje&gt;
+                    &lt;de&gt;Pepe (pepe@example.com)&lt;/de&gt;
+                    &lt;para&gt;Juan (juan@example.com)&lt;/para&gt;
+                    &lt;hora&gt;28/02/2011 17:48:23,61&lt;/hora&gt;
+                    &lt;texto&gt;¿Hola, Juan, qué haces?&lt;/texto&gt;
+                    &lt;/mensaje&gt;
+                    &lt;mensaje&gt;
+                    &lt;de&gt;Juan (juan@example.com)&lt;/de&gt;
+                    &lt;para&gt;Pepe (pepe@example.com)&lt;/para&gt;
+                    &lt;hora&gt;28/02/2011 17:54:20,87&lt;/hora&gt;
+                    &lt;texto&gt;Aquí, aprendiendo &lt;strong&gt;XML&lt;/strong&gt;&lt;/texto&gt;
+                    &lt;/mensaje&gt;
+                    &lt;/mensajes&gt;
+
+                    &lt;!--
+                    Ejercicio 167
+                    &lt;!DOCTYPE mensajes [
+                    &lt;!ELEMENT mensajes (mensaje)&gt;
+                    &lt;!ELEMENT de (#PCDATA)&gt;
+                    &lt;!ELEMENT para (#PCDATA)&gt;
+                    &lt;!ELEMENT hora (#PCDATA)&gt;
+                    &lt;!ELEMENT texto (#PCDATA)&gt;
+                    &lt;!ELEMENT strong (#PCDATA)&gt;
+                    ]&gt;
+                    &lt;mensajes&gt;
+                    &lt;mensaje&gt;
+                    &lt;de&gt;Pepe (pepe@example.com)&lt;/de&gt;
+                    &lt;para&gt;Juan (juan@example.com)&lt;/para&gt;
+                    &lt;hora&gt;28/02/2011 17:48:23,61&lt;/hora&gt;
+                    &lt;texto&gt;¿Hola, Juan, qué haces?&lt;/texto&gt;
+                    &lt;/mensaje&gt;
+                    &lt;mensaje&gt;
+                    &lt;de&gt;Juan (juan@example.com)&lt;/de&gt;
+                    &lt;para&gt;Pepe (pepe@example.com)&lt;/para&gt;
+                    &lt;hora&gt;28/02/2011 17:54:20,87&lt;/hora&gt;
+                    &lt;texto&gt;Aquí, aprendiendo &lt;strong&gt;XML&lt;/strong&gt;&lt;/texto&gt;
+                    &lt;/mensaje&gt;
+                    &lt;/mensajes&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+        </ol>
+
+        <h2><strong>DTD. Ejercicios 3 y 4</strong></h2>
+        <h3><strong>Ejercicio 3 - Elementos con atributos - Corregir errores
+            en los elementos</strong></h3>
+        <p>Los siguientes documentos no son válidos porque contienen uno o dos
+            errores (los errores no están en la DTD interna). Corrija los errores y
+            compruebe con XML Copy Editor que ya son documentos válidos.
+            </p>
+        <ol>
+            <li><strong>Datos personales (dtd_31.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE persona [
+                    &lt;!ELEMENT persona EMPTY&gt;
+                    &lt;!ATTLIST persona nombre CDATA #IMPLIED&gt;
+                    ]&gt;
+                    &lt;persona nombre="" /&gt;
+
+                    &lt;!--
+                    Ejerccio 1
+                    &lt;!DOCTYPE persona [
+                    &lt;!ELEMENT persona EMPTY&gt;
+                    &lt;!ATTLIST persona nombre CDATA #IMPLIED&gt;
+                    ]&gt;
+                    &lt;persona dni="03141592E" /&gt;κ
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Película (dtd_32.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE pelicula [
+                    &lt;!ELEMENT pelicula EMPTY&gt;
+                    &lt;!ATTLIST pelicula titulo CDATA #IMPLIED&gt;
+                    ]&gt;
+                    &lt;pelicula titulo=""/&gt;
+
+                    &lt;!--
+                    Ejerccio 8
+                    &lt;!DOCTYPE pelicula [
+                    &lt;!ELEMENT pelicula EMPTY&gt;
+                    &lt;!ATTLIST pelicula titulo CDATA #IMPLIED&gt;
+                    ]&gt;
+                    &lt;pelicula titulo="La diligencia" genero="oeste" /&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Cuadros (dtd_33.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE cuadros [
+                    &lt;!ELEMENT cuadros (cuadro*)&gt;
+                    &lt;!ELEMENT cuadro EMPTY&gt;
+                    &lt;!ATTLIST cuadro titulo ID #REQUIRED&gt;
+                    &lt;!ATTLIST cuadro autor CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;cuadros&gt;
+                    &lt;cuadro titulo="AdányEva" autor="Alberto Durero" /&gt;
+                    &lt;cuadro autor="Lucas Cranach, el viejo" titulo="Elmonaguillo"/&gt;
+                    &lt;/cuadros&gt;
+
+                    &lt;!--
+                    Ejerccio 15
+                    &lt;!DOCTYPE cuadros [
+                    &lt;!ELEMENT cuadros (cuadro*)&gt;
+                    &lt;!ELEMENT cuadro EMPTY&gt;
+                    &lt;!ATTLIST cuadro titulo ID #REQUIRED&gt;
+                    &lt;!ATTLIST cuadro autor CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;cuadros&gt;
+                    &lt;cuadro titulo="Adán y Eva" autor="Alberto Durero" /&gt;
+                    &lt;cuadro autor="Lucas Cranach, el viejo" titulo="Adán y Eva"/&gt;
+                    &lt;/cuadros&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Lista de la compra (dtd_34.xml)
+            </strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE listaCompra [
+                    &lt;!ELEMENT listaCompra (item)&gt;
+                    &lt;!ELEMENT item EMPTY&gt;
+                    &lt;!ATTLIST item nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST item cantidad CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;listaCompra&gt;
+                    &lt;item nombre="Pan" cantidad= "3Barras" /&gt;
+                    &lt;/listaCompra&gt;
+
+                    &lt;!--
+                    Ejerccio 27
+                    &lt;!DOCTYPE listaCompra [
+                    &lt;!ELEMENT listaCompra (item*)&gt;
+                    &lt;!ELEMENT item EMPTY&gt;
+                    &lt;!ATTLIST item nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST item cantidad CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;listaCompra&gt;
+                    &lt;leche cantidad="12 litros" &gt;&lt;/leche&gt;
+                    &lt;pan cantidad="3 barras de cuarto" /&gt;
+                    &lt;/listaCompra&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+            <li><strong>Jugadores de fútbol (dtd_35.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE jugadoresFutbol[
+                    &lt;!ELEMENT jugadoresFutbol (futbol)&gt;
+                    &lt;!ELEMENT futbol (jugador*)&gt;
+                    &lt;!ELEMENT jugador EMPTY&gt;
+                    &lt;!ATTLIST jugador nombre NMTOKENS #REQUIRED&gt;
+                    &lt;!ATTLIST jugador codigo ID #REQUIRED&gt;
+                    ]&gt;
+                    &lt;jugadoresFutbol&gt;
+                    &lt;futbol&gt;
+                    &lt;jugador nombre="Alfredo Di Stéfano" codigo="ads"/&gt;
+                    &lt;jugador nombre="Edison Arantes do Nascimento" codigo="eadn" /&gt;
+                    &lt;jugador nombre="Diego Armando Maradona" codigo="dam" /&gt;
+                    &lt;jugador nombre="Johan Cruyff" codigo="jc" /&gt;
+                    &lt;/futbol&gt;
+                    &lt;/jugadoresFutbol&gt;
+
+                    &lt;!--
+                    Ejerccio 39
+                    &lt;!DOCTYPE jugadoresFutbol [
+                    &lt;!ELEMENT futbol (jugador*)&gt;
+                    &lt;!ELEMENT jugador EMPTY&gt;
+                    &lt;!ATTLIST jugador nombre NMTOKENS #REQUIRED&gt;
+                    &lt;!ATTLIST jugador codigo ID #REQUIRED&gt;
+                    ]&gt;
+                    &lt;futbol&gt;
+                    &lt;jugador nombre="Alfredo Di Stéfano" codigo="1"/&gt;
+                    &lt;jugador nombre="Edison Arantes do Nascimento, Pelé"codigo="2" /&gt;
+                    &lt;jugador nombre="Diego Armando Maradona" codigo="3" /&gt;
+                    &lt;jugador nombre="Johan Cruyff" codigo="4" /&gt;
+                    &lt;/futbol&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Jugadores y equipos de fútbol (dtd_35.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE futbol [
+                    &lt;!ELEMENT futbol ((jugador|equipo)*)&gt;
+                    &lt;!ELEMENT jugador EMPTY&gt;
+                    &lt;!ATTLIST jugador nombre NMTOKENS #REQUIRED&gt;
+                    &lt;!ATTLIST jugador codigo ID #REQUIRED&gt;
+                    &lt;!ELEMENT equipo EMPTY&gt;
+                    &lt;!ATTLIST equipo nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST equipo jugadores IDREFS #IMPLIED&gt;
+                    ]&gt;
+                    &lt;futbol&gt;
+                    &lt;jugador nombre="Alfredo Di Stéfano" codigo="ads"/&gt;
+                    &lt;jugador nombre="Edison Arantes do Nascimento" codigo="ean"/&gt;
+                    &lt;jugador nombre="Diego Armando Maradona" codigo="dam" /&gt;
+                    &lt;jugador nombre="Johan Cruyff" codigo="jc" /&gt;
+                    &lt;equipo nombre="Società Sportiva Calcio Napoli" jugadores="dam" /&gt;
+                    &lt;equipo nombre="Futbol Club Barcelona" jugadores=" jc" /&gt;
+                    &lt;/futbol&gt;
+
+                    &lt;!--
+                    Ejerccio 53
+                    &lt;!DOCTYPE futbol [
+                    &lt;!ELEMENT futbol ((jugador|equipo)*)&gt;
+                    &lt;!ELEMENT jugador EMPTY&gt;
+                    &lt;!ATTLIST jugador nombre NMTOKENS #REQUIRED&gt;
+                    &lt;!ATTLIST jugador codigo ID #REQUIRED&gt;
+                    &lt;!ELEMENT equipo EMPTY&gt;
+                    &lt;!ATTLIST equipo nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST equipo jugadores IDREFS #IMPLIED&gt;
+                    ]&gt;
+                    &lt;futbol&gt;
+                    &lt;jugador nombre="Alfredo Di Stéfano" codigo="ads"/&gt;
+                    &lt;jugador nombre="Edison Arantes do Nascimento" codigo="ean"/&gt;
+                    &lt;jugador nombre="Diego Armando Maradona" codigo="dam" /&gt;
+                    &lt;jugador nombre="Johan Cruyff" codigo="jc" /&gt;
+                    &lt;equipo nombre="Società Sportiva Calcio Napoli"jugadores="Maradona" /&gt;
+                    &lt;equipo nombre="Futbol Club Barcelona" jugadores="Cruyff,Maradona" /&gt;
+                    &lt;/futbol&gt;
+                    --&gt;
+
+                </code></pre>
+            </p>
+        </ol>
+
+        <ol>
+            <li><strong>Libro (dtd_41.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE libro [
+                    &lt;!ELEMENT libro EMPTY&gt;
+                    &lt;!ATTLIST libro autor NMTOKEN #REQUIRED&gt;
+                    ]&gt;
+                    &lt;libro autor="MarioVargasLLosa" /&gt;
+
+                    &lt;!--
+                    Ejercicio 1
+                    &lt;!DOCTYPE libro [
+                    &lt;!ELEMENT libro EMPTY&gt;
+                    &lt;!ATTLIST libro autor NMTOKEN #REQUIRED&gt;
+                    ]&gt;
+                    &lt;libro autor="Mario Vargas LLosa" /&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Inventores (dtd_42.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE inventores [
+                    &lt;!ELEMENT inventores (inventor*)&gt;
+                    &lt;!ELEMENT inventor EMPTY&gt;
+                    &lt;!ATTLIST inventor invento CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST inventor nombre ID #IMPLIED&gt;
+                    ]&gt;
+                    &lt;inventores&gt;
+                    &lt;inventor nombre="RobertAdler" invento="Mando a distancia" /&gt;
+                    &lt;inventor nombre="LaszloJosefBiro" invento="Bolígrafo" /&gt;
+                    &lt;inventor nombre="JosephineGarisCochran" invento="Lavaplatos" /&gt;
+                    &lt;inventor invento="Fuego" /&gt;
+                    &lt;/inventores&gt;
+
+                    &lt;!--
+                    Ejercicio 8
+                    &lt;!DOCTYPE inventores [
+                    &lt;!ELEMENT inventores&gt;
+                    &lt;!ELEMENT inventor EMPTY&gt;
+                    &lt;!ATTLIST inventor invento CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST inventor nombre ID #REQUIRED&gt;
+                    ]&gt;
+                    &lt;inventores&gt;
+                    &lt;inventor nombre="Robert Adler" invento="Mando a distancia"
+                    /&gt;
+                    &lt;inventor nombre="Laszlo Josef Biro" invento="Bolígrafo" /&gt;
+                    &lt;inventor nombre="Josephine Garis Cochran"
+                    invento="Lavaplatos" /&gt;
+                    &lt;inventor invento="Fuego" /&gt;
+                    &lt;/inventores&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Cosas por hacer (dtd_43.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE cosasPorHacer [
+                    &lt;!ELEMENT cosasPorHacer (cosa*)&gt;
+                    &lt;!ELEMENT cosa (#PCDATA)&gt;
+                    &lt;!ATTLIST cosa fecha CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST cosa fechaLimite CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;cosasPorHacer&gt;
+                    &lt;cosa fecha="20 de febrero de 2011" fechaLimite="1 de marzo de 2011"&gt;Preparar ejercicios de DTDs&lt;/cosa&gt;
+                    &lt;cosa fecha="21 de febrero de 2011" fechaLimite="5 de marzode 2011"&gt;Preparar tema XSLT&lt;/cosa&gt;
+                    &lt;/cosasPorHacer&gt;
+
+                    &lt;!--
+                    Ejercicio 22
+                    &lt;!DOCTYPE cosasPorHacer [
+                    &lt;!ELEMENT cosasPorHacer (cosa)&gt;
+                    &lt;!ELEMENT cosa EMPTY&gt;
+                    &lt;!ATTLIST cosa fecha CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST cosa asunto CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST cosa fechaLimite CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;cosasPorHacer&gt;
+                    &lt;cosa fecha="20 de febrero de 2011" fechaLimite="1 de marzo
+                    de 2011"&gt;
+                    Preparar ejercicios de DTDs&lt;/cosa&gt;
+                    &lt;cosa fecha="21 de febrero de 2011" fechaLimite="5 de marzo
+                    de 2011"&gt;
+                    Preparar tema XSLT&lt;/cosa&gt;
+                    &lt;/cosasPorHacer&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>resoluciones de pantalla (dtd_44.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE resoluciones [
+                    &lt;!ELEMENT resoluciones (resolucion*)&gt;
+                    &lt;!ELEMENT resolucion EMPTY&gt;
+                    &lt;!ATTLIST resolucion nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST resolucion alto CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST resolucion ancho CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;resoluciones&gt;
+                    &lt;resolucion nombre="VGA" alto="480" ancho="640" /&gt;
+                    &lt;resolucion nombre="XGA" alto="1024" ancho="768" /&gt;
+                    &lt;resolucion nombre="HD 1080" alto="1920" ancho="1080" /&gt;
+                    &lt;/resoluciones&gt;
+                    
+                    &lt;!--
+                    Ejercicio 37
+                    &lt;!DOCTYPE resoluciones [
+                    &lt;!ELEMENT resoluciones EMPTY&gt;
+                    &lt;!ATTLIST resoluciones nombre NMTOKEN #REQUIRED&gt;
+                    &lt;!ATTLIST resoluciones alto CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST resoluciones ancho CDATA #REQUIRED&gt;
+                    ]&gt;
+                    &lt;resoluciones&gt;
+                    &lt;resolucion nombre="VGA" alto="480" ancho="640" /&gt;
+                    &lt;resolucion nombre="XGA" alto="1024" ancho="768" /&gt;
+                    &lt;resolucion nombre="HD 1080" alto="1920" ancho="1080" /&gt;
+                    &lt;/resoluciones&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+            <li><strong>Álbumes de Mortadelo y Filemón (dtd_45.xml)</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;!DOCTYPE albumesMortadelo [
+                    &lt;!ELEMENT albumesMortadelo (album*)&gt;
+                    &lt;!ELEMENT album EMPTY&gt;
+                    &lt;!ATTLIST album nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST album fecha (1969|1970|1971|1972|1973|1974) #REQUIRED&gt;
+                    ]&gt;
+                    &lt;albumesMortadelo&gt;
+                    &lt;album nombre="El sulfato atómico" fecha="1969"/&gt;
+                    &lt;album nombre="La caja de diez cerrojos" fecha="1971"/&gt;
+                    &lt;album nombre="El otro yo del profesor Bacterio" fecha="1973"/&gt;
+                    &lt;album nombre="Los cacharros majaretas" fecha="1974"/&gt;
+                    &lt;/albumesMortadelo&gt;
+
+                    &lt;!--
+                    Ejercicio 50
+                    &lt;!DOCTYPE albumesMortadelo [
+                    &lt;!ELEMENT albumesMortadelo (album*)&gt;
+                    &lt;!ELEMENT album (nombre, fecha)&gt;
+                    &lt;!ATTLIST album nombre CDATA #REQUIRED&gt;
+                    &lt;!ATTLIST album fecha(1969,1970,1971,1972,1973,1974)#REQUIRED&gt;
+                    ]&gt;
+                    &lt;albumesMortadelo&gt;
+                    &lt;album nombre="El sulfato atómico" fecha="1969"/&gt;
+                    &lt;album nombre="La caja de diez cerrojos" fecha="1971"/&gt;
+                    &lt;album nombre="El otro yo del profesor Bacterio" fecha="1973"/&gt;
+                    &lt;album nombre="Los cacharros majaretas" fecha="1974"/&gt;
+                    &lt;/albumesMortadelo&gt;
+                    --&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>Ejercicio 5 - DTDs alternativos</strong></h3>
+        
+            <p>Se quiere definir un lenguaje de marcas para representar los
+                resultados de una liga de fútbol. La información que se quiere
+                almacenar de cada partido es:</p>
+            <ul>
+                <li>el nombre del equipo local</li>
+                <li>el nombre del equipo visitante</li>
+                <li>los goles marcados por el equipo local</li>
+                <li>los goles marcados por el equipo visitante</li>
+            </ul>
+            <p>            Escribe tres documentos que incluyan los siguientes resultados:
+            </p>
+            <ul>
+                <li>Nottingham Presa: 0 - Inter de Mitente: 1</li>
+                <li>Vodka Juniors: 3 - Sparta da Risa: 3</li>
+                <li>Water de Munich: 4 - Esteaua es del grifo: 2</li>
+            </ul>
+            <p>Cada documento incluirá un DTD diferente para representar ese
+                lenguaje de marcas:</p>
+            <ul>
+                <li>una DTD en la que no haya atributos, si no únicamente etiquetas</li>
+                <li>una DTD en la que los goles sean atributos</li>
+                <li>una DTD en la toda la información se guarde en forma de
+                    atributos</li>
+            </ul>
+        
+            <p><strong>una DTD en la que no haya atributos, si no únicamente etiquetas</strong></p>
+            <ol>
+                <li></li>
+                <p>
+                    <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;!DOCTYPE ligaDeFutbol [
+                          &lt;!ELEMENT ligaDeFutbol (partido*)&gt;
+                          &lt;!ELEMENT partido (local, visitante)&gt;
+                          &lt;!ELEMENT local (nombre, goles)&gt;
+                          &lt;!ELEMENT visitante (nombre, goles)&gt;
+                          &lt;!ELEMENT nombre (#PCDATA)&gt;
+                          &lt;!ELEMENT goles (#PCDATA)&gt;
+                       ]&gt;
+                       
+                        &lt;ligaDeFutbol&gt;
+                          &lt;partido&gt;
+                            &lt;local&gt;
+                              &lt;nombre&gt;Nottingham Presa &lt;/nombre&gt;
+                              &lt;goles&gt;0 &lt;/goles&gt;
+                            &lt;/local&gt;
+                            &lt;visitante&gt;
+                              &lt;nombre&gt;Inter de Mitente &lt;/nombre&gt;
+                              &lt;goles&gt;1 &lt;/goles&gt;
+                            &lt;/visitante&gt;
+                          &lt;/partido&gt;
+                          &lt;partido&gt;
+                            &lt;local&gt;
+                              &lt;nombre&gt;Vodka Juniors &lt;/nombre&gt;
+                              &lt;goles&gt;3 &lt;/goles&gt;
+                            &lt;/local&gt;
+                            &lt;visitante&gt;
+                              &lt;nombre&gt;Sparta da Risa &lt;/nombre&gt;
+                              &lt;goles&gt;3 &lt;/goles&gt;
+                            &lt;/visitante&gt;
+                          &lt;/partido&gt;
+                          &lt;partido&gt;
+                            &lt;local&gt;
+                              &lt;nombre&gt;Water de Munich &lt;/nombre&gt;
+                              &lt;goles&gt;4 &lt;/goles&gt;
+                            &lt;/local&gt;
+                            &lt;visitante&gt;
+                              &lt;nombre&gt;Esteaua es del grifo &lt;/nombre&gt;
+                              &lt;goles&gt;2 &lt;/goles&gt;
+                            &lt;/visitante&gt;
+                          &lt;/partido&gt;
+                        &lt;/ligaDeFutbol&gt;
+                    </code></pre>
+                </p>
+            </ol>
+
+            <p><strong>una DTD en la que los goles sean atributos</strong></p>
+            <ol>
+                <li></li>
+                <p>
+                    <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;!DOCTYPE ligaDeFutbol [
+                        &lt;!ELEMENT ligaDeFutbol (partido*)&gt;
+                        &lt;!ELEMENT partido (local, visitante)&gt;
+                        &lt;!ELEMENT local (#PCDATA)&gt;
+                        &lt;!ELEMENT visitante (#PCDATA)&gt;
+                        &lt;!ATTLIST local goles CDATA #REQUIRED&gt;
+                        &lt;!ATTLIST visitante goles CDATA #REQUIRED&gt;
+                        ]&gt;
+
+                        &lt;ligaDeFutbol&gt;
+                        &lt;partido&gt;
+                            &lt;local goles="0"&gt;Nottingham Presa&lt;/local&gt;
+                            &lt;visitante goles="1"&gt;Inter de Mitente&lt;/visitante&gt;
+                        &lt;/partido&gt;
+                        &lt;partido&gt;
+                            &lt;local goles="3"&gt;Vodka Juniors&lt;/local&gt;
+                            &lt;visitante goles="3"&gt;Sparta da Risa&lt;/visitante&gt;
+                        &lt;/partido&gt;
+                        &lt;partido&gt;
+                            &lt;local goles="4"&gt;Water de Munich&lt;/local&gt;
+                            &lt;visitante goles="2"&gt;Esteaua es del grifo&lt;/visitante&gt;
+                        &lt;/partido&gt;
+                        &lt;/ligaDeFutbol&gt;
+                    </code></pre>
+                </p>
+            </ol>
+
+            <p><strong>una DTD en la toda la información se guarde en forma de
+                atributos</strong></p>
+            <ol>
+                <li></li>
+                <p>
+                    <pre><code class="xml">
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;!DOCTYPE ligaDeFutbol [
+                        &lt;!ELEMENT ligaDeFutbol (partido*)&gt;
+                        &lt;!ELEMENT partido EMPTY&gt;
+                        &lt;!ATTLIST partido localNombre CDATA #REQUIRED&gt;
+                        &lt;!ATTLIST partido localGoles CDATA #REQUIRED&gt;
+                        &lt;!ATTLIST partido visitanteNombre CDATA #REQUIRED&gt;
+                        &lt;!ATTLIST partido visitanteGoles CDATA #REQUIRED&gt;
+                        ]&gt;
+
+                        &lt;ligaDeFutbol&gt;
+                        &lt;partido localNombre="Nottingham Presa" localGoles="0" visitanteNombre="Inter de Mitente" visitanteGoles="1" /&gt;
+                        &lt;partido localNombre="Vodka Juniors" localGoles="3"  visitanteNombre="Sparta da Risa" visitanteGoles="3" /&gt;
+                        &lt;partido localNombre="Water de Munich" localGoles="4" visitanteNombre="Esteaua es del grifo" visitanteGoles="2" /&gt;
+                        &lt;/ligaDeFutbol&gt;
+                    </code></pre>
+                </p>
+            </ol>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
+<div class="cuerpo">
+
+    </div>

@@ -57,10 +57,20 @@
             <li><a href="../AnalizandoRSS/index.html">AnalisisRSS</a>
                 <ul class="dropdown" aria-label="submenu">
                     <li><a target="_blank" href="../AnalizandoRSS/rss.xml">Mi RSS</a></li>
-                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>   
+                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/correccion.xml">Correccion aemet</a></li>   
                 </ul>
             </li>
         </ul>
+        <ul>
+                <li><a href="#">AnalisisRSS</a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a target="_blank" href="../ValidacionXML/index.html">DTD</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index2.html">DTD EXTERNO</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index3.html">XSD</a></li>   
+                    </ul>
+                </li>
+            </ul>
 
         <li><a href="../tablas/tablas.html">Tablas</a></li>
         <li><a href="../../index.html">Ir al índice</a></li>
@@ -69,14 +79,15 @@
 <div class="cuerpo">
         
     <h1><center>RSS y ATOM</center></h1>
+    <h2>FEED 1</h2>
     <ol>
-        <li> <strong>Indica si es válido el feed</strong> </li>
-        <p>El "validator" nos indica que el "feed" no es valido. <br>
-        <img src="./media/rssvalidator.png" height="400" width="800">
+        <li> <strong>Indica si es válido el feed 1</strong> </li>
+        <p>El "validator" nos indica que el "feed" es valido. <br>
+        <img src="./media/rssvalidator1.png" height="400" width="800">
         </p>
         <li> <strong>Subsana los errores/warnings en su caso</strong> </li>
         <p>
-            En la línea 17 y 18 vemos el error "Email address is missing real name", con poner un email valido se solucionaria. <br> <br>
+            En la línea 17 y 18 vemos el error "Email address is missing real name", con poner un email valido se solucionaria. <br> 
             En la línea 82 vemos el error " Missing atom:link with rel="self"", para solucionar este erro solo tendremos que declara que es <br>
             un feed rss añadiendo lo siguiente: rss version="2.0". <br>
             Luego tan solo deberemos poner un enlace a nuestro feed en "channel" atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml".
@@ -86,6 +97,73 @@
         <li> <strong>Indica número de items o equivalentes</strong> </li>
         <p>Dispone de 10 estiquetas item.</p>
     </ol>
+    <h2>FEED 2</h2>
+    <ol>
+        <li> <strong>Indica si es válido el feed 2</strong> </li>
+        <p>El "validator" nos indica que el "feed" es valido.<br>
+        <img src="./media/rssvalidator2.png" height="400" width="800">
+        </p>
+        <li> <strong>Subsana los errores/warnings en su caso</strong> </li>
+        <p>
+            En la línea 12 y 14 veremos el error "Email address is missing real name", con poner un email valido se solucionaria. <br>
+            En la línea 18 vemos el error "Image title doesn't match channel title", esto es porque el "title" de la imagen tiene que ser el mismo que del "channel". <br> 
+            En la línea 19 vemos el error "Image link doesn't match channel link", tiene que tener el mismo "link", que del "channel". <br>
+            En la línea 32 vemos el error "item should contain a guid element", se soluciona añadiendo un "guid" único para cada "item" <br>
+            En la línea 51 vemos el error "Missing atom:link with rel="self"".
+        </p>
+        <li> <strong>Indica channel o equivalente</strong> </li>
+        <p>Desde la linea 3 a la 51.</p>
+        <li> <strong>Indica número de items o equivalentes</strong> </li>
+        <p>Dispone de 3 estiquetas item.</p>
+    </ol>
+    <h2>FEED 3</h2>
+    <ol>
+        <li> <strong>Indica si es válido el feed 3</strong> </li>
+        <p>El "validator" nos indica que el "feed" es valido.<br>
+        <img src="./media/rssvalidator3.png" height="400" width="800">
+        </p>
+        <li> <strong>Subsana los errores/warnings en su caso</strong> </li>
+        <p>
+            En la línea 12 veremos el error "item should contain a guid element", se soluciona añadiendo un "guid" único para cada "item". <br><br>
+            En la línea 23 veremos el error "style attribute contains potentially dangerous content: FONT-SIZE: 10pt; FONT-FAMILY: "Arial","sans-serif"", esto es debido a que algunas <br> 
+            de las caracteristicas no son compatibles y ocaciona errores, por lo que se debe modificar. <br>
+            En la línea 421 veremos el error "Missing atom:link with rel="self"".
+        </p>
+        <li> <strong>Indica channel o equivalente</strong> </li>
+        <p>Desde la linea 3 a la 421</p>
+        <li> <strong>Indica número de items o equivalentes</strong> </li>
+        <p>Dispone de 69 estiquetas item.</p>
+    </ol>
+    <h2>FEED 4</h2>
+    <ol>
+        <li> <strong>Indica si es válido el feed</strong> </li>
+        <p>El "validator" nos indica que el "feed" no es valido.<br>
+        <img src="./media/rssvalidator4.png" height="400" width="800">
+        </p>
+        <li> <strong>Subsana los errores/warnings en su caso</strong> </li>
+        <p>
+            En la línea 6 veremos el error "link must have an href attribute", hay que poner un enlace con la url del link. <br>
+            En la línea 17 veremos el error "id must be a full and valid URL: Z_CAP_C_LEMM_20190327225002_AFAP7431.tar.gz", la URL es erronea, <br> 
+            y tiene que ser esta http://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/cap/Z_CAP_C_LEMM_20190327225002_AFAP7431.tar.gz.
+            En la línea 6 veremos el error "link should not have text (all data is in attributes)" falta rel:self. <br>
+            En la línea 2 veremos el error " Missing atom:link with rel="self"". <br>
+            <img src="./media/correccion.png" height="400" width="800"><br>
+            <a href="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fanuar-fp.github.io%2FMyRepository%2Fmisitio%2FAnalizandoRSS%2Fcorreccion.xml">Link de la Página de W3C validator</a>
+        </p>
+        <li> <strong>Indica channel o equivalente</strong> </li>
+        <p>Desde la linea 2 a la 20.</p>
+        <li><strong>Indica número de items o equivalentes</strong></li>
+        <p>Dispone de 3 estiquetas item.</p>
+    </ol>
+
+
+
+
+
+
+
+
+    
 
         <h3> <strong>Estructura y elementos de RSS 2.0:</strong> </h3>
     <ol>
@@ -93,16 +171,16 @@
         <p> 
             <pre><code class="xml">
                 &lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
-                        &lt;rss version="2.0"&gt;
-                        &lt;channel&gt;
-                        &lt;/title&gt;
-                        &lt;/link&gt;
-                        &lt;/description&gt;
-                            &lt;/item&gt;
-                            ... &lt;!-- Tantos elementos como entradas queramos --&gt;
-                            &lt;item&gt;
-                        &lt;/channel&gt;
-                        &lt;/rss&gt;
+                &lt;rss version="2.0"&gt;
+                &lt;channel&gt;
+                &lt;title&gt;&lt;/title&gt;
+                &lt;link&gt;&lt;/link&gt;
+                &lt;description&gt;&lt;/description&gt;
+                    &lt;item&gt;
+                    ... &lt;!-- Tantos elementos como entradas queramos --&gt;
+                    &lt;/item&gt;
+                &lt;/channel&gt;
+                &lt;/rss&gt;
             </code></pre>
         </p>
         <li><strong>Indica cuántos elementos <channel> puede haber en un documento RSS</strong></li>
@@ -110,9 +188,9 @@
         <li><strong>Indica los elementos requeridos en &lt;channel&gt; (son tres)</strong></li>
         <p>
             <pre><code class="xml">
-                &lt;/title&gt;<br>
-                &lt;/link&gt;<br>
-                &lt;/description&gt;
+                &lt;title&gt;&lt;/title&gt;<br>
+                &lt;ink&gt;&lt;/link&gt;<br>
+                &lt;description&gt;&lt;/description&gt;
             </code></pre>
             
         </p>
@@ -122,7 +200,13 @@
         <li><strong>Elementos item</strong></li>
         <p>title, link, description, author, category, comments, enclosure, guid, pubDate, source</p>
         <li><strong>Indica el elemento que añade un elemento multimedia. Indica sus tres atributos</strong></li>
-        <p></p>
+        <p>
+            <pre><code class="xml">
+                &lt;enclosure ulr=""&gt;&lt;/enclosure&gt;<br>
+                &lt;enclosure lenght=""&gt;&lt;/enclosure&gt;<br>
+                &lt;enclosure type=""&gt;&lt;/enclosure&gt;
+            </code></pre>
+        </p>
     </ol>
 
         <h3> <strong>Estructura y elementos de Atom 1.0:</strong> </h3>
@@ -162,47 +246,47 @@
         <li><strong>Indica los elementos recomendados en &lt;feed&gt;</strong></li>
         <p>
             <pre><code class="xml">
-                    &lt;author&gt;<br>
-                    &lt;link&gt;
+                &lt;author&gt;&lt;/author&gt;<br>
+                &lt;link&gt;&lt;/link&gt;
             </code></pre>
         </p>
         <li><strong>Indica los elementos opcionales en &lt;feed&gt;</strong></li>
         <p>
             <pre><code class="xml">
-                    &lt;category&gt;<br>
-                    &lt;contributor&gt;<br>
-                    &lt;generator&gt;<br>
-                    &lt;icon&gt;<br>
-                    &lt;logo&gt;<br>
-                    &lt;rights&gt;<br>
-                    &lt;subtitle&gt;
+                &lt;category&gt;&lt;/category&gt;<br>
+                &lt;contributor&gt;&lt;/contributor&gt;<br>
+                &lt;generator&gt;&lt;/generator&gt;<br>
+                &lt;icon&gt;&lt;/icon&gt;<br>
+                &lt;logo&gt;&lt;/logo&gt;<br>
+                &lt;rights&gt;&lt;/rights&gt;<br>
+                &lt;subtitle&gt;&lt;/subtitle&gt;
             </code></pre>
         </p>
         <li><strong>Indica los elementos requeridos en &lt;entry&gt;</strong></li>
         <p>
             <pre><code class="xml">
-                    &lt;id&gt;<br>
-                    &lt;title&gt;<br>
-                    &lt;updated&gt;
+                &lt;id&gt;&lt;/id&gt;<br>
+                &lt;title&gt;&lt;/title&gt;<br>
+                &lt;updated&gt;&lt;/updated&gt;
             </code></pre>
         </p>
         <li><strong>Indica los elementos recomendados en &lt;entry&gt;</strong></li>
         <p>
             <pre><code class="xml">
-                    &lt;author&gt;<br>
-                    &lt;content&gt;<br>
-                    &lt;link&gt;<br>
-                    &lt;summary&gt;
+                &lt;author&gt;&lt;/author&gt;<br>
+                &lt;content&gt;&lt;/content&gt;<br>
+                &lt;link&gt;&lt;/link&gt;<br>
+                &lt;summary&gt;&lt;/summary&gt;
             </code></pre>
         </p>
         <li><strong>Indica los elementos opcionales en &lt;entry&gt;</strong></li>
         <p>
            <pre><code class="xml">
-                &lt;category&gt;<br>
-                &lt;contributor&gt;<br>
-                &lt;published&gt;<br>
-                &lt;rights&gt;<br>
-                &lt;source&gt;
+            &lt;category&gt;&lt;/category&gt;<br>
+            &lt;contributor&gt;&lt;/contributor&gt;<br>
+            &lt;published&gt;&lt;/published&gt;<br>
+            &lt;rights&gt;&lt;/rights&gt;<br>
+            &lt;source&gt;&lt;/source&gt;
             </code></pre> 
         </p>
     </ol>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>http://www.aemet.es/es/eltiempo/prediccion/avisos</id>
+ <title>AEMET - Avisos de fenómenos meteorológicos adversos - Navarra</title>
+ <subtitle>Avisos de fenómenos meteorológicos adversos según el Plan Meteoalerta de la Agencia Estatal de Meteorología (AEMET) para Navarra.</subtitle>
+ <link href="http://www.aemet.es/es/eltiempo/prediccion/avisos?p=7431"/>
+ <author>
+   <name>Agencia Estatal de Meteorología. AEMET</name>
+ </author>
+ <rights>http://www.aemet.es/es/nota_legal</rights>
+ <updated>2019-04-01T21:50:02+00:00</updated>
+ <logo>http://www.aemet.es/imagenes/gif/logo_AEMET_web.gif</logo>
+   <entry>
+     <title>Estado completo de avisos para Navarra. No hay avisos para Navarra</title>
+     <summary>Fichero tar.gz que contiene todos los avisos para Navarra de 23:50 01-04-2019 CEST (UTC+2) a 23:59 04-04-2019 CEST (UTC+2).</summary>
+     <link href="http://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/cap/Z_CAP_C_LEMM_20190401215002_AFAP7431.tar.gz"/>
+     <id>http://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/cap/Z_CAP_C_LEMM_20190327225002_AFAP7431.tar.gz</id>
+     <updated>2019-04-01T21:50:02+00:00</updated>
+   </entry>
+</feed>

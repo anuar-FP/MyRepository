@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-    <rss version="2.0">
-        <channel>
-            <title>Mi RSS</title>
+<rss version="2.0">
+    <channel>
+        <title>Mi RSS</title>
+        <link>https://anuar-fp.github.io/MyRepository/</link>
+        <description>Esta es mi primerita vez.</description>
+        <item>
+            <title>Este es el primer title</title>
+            <link>http://mipagina.com/definicion_RSS.html</link>
+            <description>En este primer title suele estar la descripcion del contenido del rss</description>
+        </item> 
+        <item>
+            <title>Este es el segundo title</title>
             <link>https://anuar-fp.github.io/MyRepository/</link>
-            <description>Esta es mi primerita vez.</description>
-                <item>
-                    <title>Este es el primer title</title>
-                    <link>https://github.com/anuar-FP/MyRepository</link>
-                    <description>En este primer title suele estar la descripcion del contenido del rss</description>
-                </item>  
-        </channel>
-    </rss>
+            <description>En este segundo title.</description>
+        </item>   
+    </channel>
+</rss>

@@ -1,0 +1,268 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anouar Bettahi Berdai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/x-icon">
+</head>
+<body>
+    
+    <nav role="navigation">
+    <ul class="margen">
+        <li><a href="misitio\portfolio\ejercicio1.html">TEMA 2</a></li>
+        <li><a href="#" aria-haspopup="true">TEMA 3</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="../portfolio/ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="../portfolio/ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="../portfolio/ejercicio5.html">Ejercicio 4</a></li>
+            </ul>
+        </li>
+
+        <li><a href="../portfolio/ejercicio6.html">TEMA 4</a></li>
+        <li><a href="../portfolio/ejercicio8.html">TEMA 5</a></li>
+        <li><a href="../portfolio/ejercicio6.html">TEMA 6</a></li>
+        <li><a href="#">TEMA 7</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio11.html">Ejercicio 11</a></li>
+                <li><a href="../portfolio/ejercicio12.html">Ejercicio 12</a></li>
+                <li><a href="../portfolio/ejercicio13.html">Ejercicio 13</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TEMA 8</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../portfolio/ejercicio14.html">Ejercicio 14</a></li>
+                <li><a href="../portfolio/ejercicio15.html">Ejercicio 15</a></li>
+                <li><a href="../portfolio/ejercicio16.html">Ejercicio 16</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Formularios</a>
+            <ul class="dropdown" aria-label="submenu">
+                <li><a href="../form/form1.html">Formularios 1</a></li>
+                <li><a href="../form/form2.html">Formularios 2</a></li>
+                <li><a href="../form/form3.html">Formularios 3</a></li>
+                <li><a href="../form/form4.html">Formularios 4</a></li>   
+            </ul>
+        </li>
+        <ul><li><a href="../flex/index.html">FLEX</a></li></ul>
+
+        <ul><li><a href="../grid/index.html">GRID</a></li></ul>
+
+        <ul>
+            <li><a href="../AnalizandoRSS/index.html">AnalisisRSS</a>
+                <ul class="dropdown" aria-label="submenu">
+                    <li><a target="_blank" href="../AnalizandoRSS/rss.xml">Mi RSS</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/atom.xml">Mi ATOM</a></li>
+                    <li><a target="_blank" href="../AnalizandoRSS/correccion.xml">Correccion aemet</a></li>   
+                </ul>
+            </li>
+        </ul>
+        <ul>
+                <li><a href="#">AnalisisRSS</a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a target="_blank" href="../ValidacionXML/index.html">DTD</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index2.html">DTD EXTERNO</a></li>
+                        <li><a target="_blank" href="../ValidacionXML/index3.html">XSD</a></li>   
+                    </ul>
+                </li>
+            </ul>
+
+        <li><a href="../tablas/tablas.html">Tablas</a></li>
+        <li><a href="../../index.html">Ir al índice</a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
+        
+    <h1><center><strong>Introducción a XML. Validación</strong></center></h1>
+    <h2><strong>DTD. Ejemplos con DTD externos</strong></h2>
+    <h3><strong>BANCO</strong></h3>
+    
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;cuentas&gt;
+                    &lt;copropietario&gt;John Doe&lt;/copropietario&gt;
+                    &lt;copropietario&gt;Jack Smith&lt;/copropietario&gt;
+                    &lt;cheques&gt;
+                    &lt;saldo&gt;170.00&lt;/saldo&gt;
+                    &lt;transaccion&gt;-100.00&lt;/transaccion&gt;
+                    &lt;transaccion&gt;-500.00&lt;/transaccion&gt;
+                    &lt;cargos&gt;4.00&lt;/cargos&gt;
+                    &lt;/cheques&gt;
+                    &lt;copropietario&gt;John Doe&lt;/copropietario&gt;
+                    &lt;ahorros&gt;
+                    &lt;saldo&gt;5000.00&lt;/saldo&gt;
+                    &lt;intereses&gt;212.50&lt;/intereses&gt;
+                    &lt;/ahorros&gt;
+                    &lt;/cuentas&gt;
+                </code></pre>
+            </p>
+            <li> <strong>DTD EXTERNO</strong>
+            </li>
+            <p>
+                <pre><code class="xml">
+                    &lt;!ENTITY % cuenta "(saldo,
+                    transaccion*)"&gt;
+                    &lt;!ELEMENT cuentas (copropietario+,
+                    (cheques|ahorros))+&gt;
+                    &lt;!ELEMENT copropietario (#PCDATA)&gt;
+                    &lt;!ELEMENT cheques (%cuenta;,
+                    cargos)&gt;
+                    &lt;!ELEMENT ahorros
+                    (%cuenta;,intereses)&gt;
+                    &lt;!ELEMENT cargos (#PCDATA)&gt;
+                    &lt;!ELEMENT intereses (#PCDATA)&gt;
+                    &lt;!ELEMENT saldo (#PCDATA)&gt;
+                    &lt;!ELEMENT transaccion (#PCDATA)&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>CLIENTE</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;libreta-direcciones&gt;
+                    &lt;entrada&gt;
+                    &lt;nombre&gt;John Doe&lt;/nombre&gt;
+                    &lt;direccion&gt;
+                    &lt;calle&gt;34 Fountain Square Plaza&lt;/calle&gt;
+                    &lt;region&gt;OH&lt;/region&gt;
+                    &lt;codigo-postal&gt;45202&lt;/codigo-postal&gt;
+                    &lt;localidad&gt;Cincinnati&lt;/localidad&gt;
+                    &lt;pais&gt;US&lt;/pais&gt;
+                    &lt;/direccion&gt;
+                    &lt;telefono&gt;513-555-8889&lt;/telefono&gt;
+                    &lt;correo-e href="mailto:jdoe@emailaholic.com"/&gt;
+                    &lt;/entrada&gt;
+                    &lt;/libreta-direcciones&gt;
+                </code></pre>
+            </p>
+            <li><strong>DTD EXTERNO</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;!ELEMENT libreta-direcciones (entrada*)&gt;
+                    &lt;!ELEMENT entrada (nombre, direccion,
+                    telefono, correo-e)&gt;
+                    &lt;!ELEMENT nombre (#PCDATA)&gt;
+                    &lt;!ELEMENT direccion (calle, region, codigo-postal, localidad, pais)&gt;
+                    &lt;!ELEMENT calle (#PCDATA)&gt;
+                    &lt;!ELEMENT region (#PCDATA)&gt;
+                    &lt;!ELEMENT codigo-postal (#PCDATA)&gt;
+                    &lt;!ELEMENT localidad (#PCDATA)&gt;
+                    &lt;!ELEMENT pais (#PCDATA)&gt;
+                    &lt;!ELEMENT telefono (#PCDATA)&gt;
+                    &lt;!ELEMENT correo-e EMPTY&gt;
+                    &lt;!ATTLIST correo-e href CDATA #IMPLIED&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>LIBRO</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;Libro isbn="isbn-861003-11-0" fecha="Noviembre 1999" paginas="750"&gt;
+                    &lt;Titulo&gt;Aprendiendo XML&lt;/Titulo&gt;
+                    &lt;Abstract&gt;Metodo de aprender XML&lt;/Abstract&gt;
+                    &lt;Categorias&gt;
+                    &lt;Categoria&gt;Internet&lt;/Categoria&gt;
+                    &lt;Categoria&gt;Publicacion Web&lt;/Categoria&gt;
+                    &lt;Categoria&gt;XML&lt;/Categoria&gt;
+                    &lt;/Categorias&gt;
+                    &lt;Precio moneda="eur"&gt;34.5&lt;/Precio&gt;
+                    &lt;/Libro&gt;
+                </code></pre>
+            </p>
+            <li><strong>DTD EXTERNO</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;!ELEMENT Libro (Titulo, Abstract,
+                    Categorias, Precio?)&gt;
+                    &lt;!ELEMENT Categorias (Categoria,
+                    Categoria, Categoria)&gt;
+                    &lt;!ELEMENT Titulo (#PCDATA)&gt;
+                    &lt;!ELEMENT Abstract (#PCDATA)&gt;
+                    &lt;!ELEMENT Categoria (#PCDATA)&gt;
+                    &lt;!ELEMENT Precio (#PCDATA)&gt;
+                    &lt;!ATTLIST Precio moneda (dol|eur|lib)
+                    #REQUIRED&gt;
+                    &lt;!ATTLIST Libro isbn ID #REQUIRED
+                    nivel CDATA #IMPLIED
+                    fecha CDATA #REQUIRED
+                    paginas CDATA #REQUIRED
+                    autor IDREFS #IMPLIED
+                    editor IDREFS #IMPLIED&gt;
+                </code></pre>
+            </p>
+        </ol>
+
+        <h3><strong>PRODUCTOS</strong></h3>
+        <ol>
+            <li><strong>XML</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                    &lt;Productos&gt;
+                    &lt;Items&gt;
+                    &lt;Cantidad&gt;2&lt;/Cantidad&gt;
+                    &lt;Descripcion&gt;Hamburguesas&lt;/Descripcion&gt;
+                    &lt;Precio&gt;€2.25&lt;/Precio&gt;
+                    &lt;Total-item&gt;€$4.5&lt;/Total-item&gt;
+                    &lt;/Items&gt;
+                    &lt;Items&gt;
+                    &lt;Volumen&gt;2 Litros&lt;/Volumen&gt;
+                    &lt;Descripcion&gt;Coca Cola&lt;/Descripcion&gt;
+                    &lt;Precio&gt;€1.25&lt;/Precio&gt;
+                    &lt;Total-item&gt;€1.5&lt;/Total-item&gt;
+                    &lt;/Items&gt;
+                    &lt;Impuesto&gt;€0.25&lt;/Impuesto&gt;
+                    &lt;Entrega&gt;A domicilio&lt;/Entrega&gt;
+                    &lt;Total-productos&gt;€6.25&lt;/Total-productos&gt;
+                    &lt;/Productos&gt;
+                </code></pre>
+            </p>
+            <li><strong>DTD EXTERNO</strong></li>
+            <p>
+                <pre><code class="xml">
+                    &lt;!ELEMENT Productos (Items*, Impuesto?, Entrega,
+                    Total-productos)&gt;
+                    &lt;!ELEMENT Items ((Cantidad|Volumen), Descripcion,
+                    Precio, Total-item)&gt;
+                    &lt;!ELEMENT Cantidad (#PCDATA)&gt;
+                    &lt;!ELEMENT Volumen (#PCDATA)&gt;
+                    &lt;!ELEMENT Descripcion (#PCDATA)&gt;
+                    &lt;!ELEMENT Precio (#PCDATA)&gt;
+                    &lt;!ELEMENT Total-item (#PCDATA)&gt;
+                    &lt;!ELEMENT Impuesto (#PCDATA)&gt;
+                    &lt;!ELEMENT Entrega (#PCDATA)&gt;
+                    &lt;!ELEMENT Total-productos (#PCDATA)&gt;
+                </code></pre>
+            </p>
+        </ol>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
+<div class="cuerpo">
+
+    </div>
